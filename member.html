@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="no-js">
+
+<head>
+    
+    <meta charset="utf-8">
+
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/touch/apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/touch/apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/touch/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/images/touch/apple-touch-icon-57x57-precomposed.png">
+    <link rel="shortcut icon" sizes="196x196" href="assets/images/touch/touch-icon-196x196.png">
+    <link rel="shortcut icon" href="assets/images/touch/apple-touch-icon.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="assets/images/touch/apple-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#222222">
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="">
+    
+    <title>会员中心</title>
+    
+    <link rel="stylesheet" href="assets/stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="assets/stylesheets/font-awesome.css">
+    <link rel="stylesheet" href="assets/stylesheets/amour.css">
+    <link rel="stylesheet" href="assets/stylesheets/app.css">
+    
+    <script src="assets/javascripts/vendor/modernizr-2.7.1.min.js"></script>
+    
+</head>
+<body>
+
+    <div class="view" id="view-member">
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#member-tab-register" role="tab" data-toggle="tab">会员绑定</a></li>
+            <li><a href="#member-tab-credits" role="tab" data-toggle="tab">积分查询</a></li>
+            <li><a href="#member-tab-upload" role="tab" data-toggle="tab">入会补登</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="member-tab-register">
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">手机号</label>
+                        <div class="col-xs-9">
+                            <input type="number" class="form-control" name="mobile" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-3 control-label">验证码</label>
+                        <div class="col-xs-5">
+                            <input type="number" class="form-control" name="code" placeholder="">
+                        </div>
+                        <div class="col-xs-4 col-btn-send">
+                            <button class="btn btn-block btn-send">发送验证码</button>
+                        </div>
+                    </div>
+                    <span class="help-block">请填写您办理会员时预留的手机号码进行绑定</span>
+                    <div class="form-group">
+                        <div class="col-xs-offset-2 col-xs-10">
+                            <div class="checkbox">
+                                <label><input type="checkbox"> 同意绑定</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <div class="col-xs-offset-2 col-xs-8">
+                            <button type="submit" class="btn btn-block btn-bind">绑定</button>
+                        </div>
+                    </div>
+                </form>
+                <p class="small">输入办理Bose Club会员卡时预留的手机号码即可完成会员卡绑定，随时随地轻松查询积分。</p>
+                <p class="small highlight">会员通过BOSE官方微信平台进行手机与会员身份绑定，以便于第一时间获悉品牌方活动、及会员积分帐户（累积、使用）信息。会员在此明确同意，BOSE可通过会员提供的联系方式向会员发送产品信息、品牌活动信息、会员账户信息以及其他BOSE认为合适的信息。</p>
+            </div>
+            <div class="tab-pane fade" id="member-tab-credits">
+                <div class="panel-group" id="member-credits-accordion">
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#member-credits-accordion" href="#member-credits-collapse-1">
+                                    <span>您的交易积分</span>
+                                    <div class="icon in">
+                                        <i class="fa fa-lg fa-caret-up"></i>
+                                        <i class="fa fa-lg fa-caret-down"></i>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="member-credits-collapse-1" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                                <p>当前有效积分：50000</p>
+                                <p>当前积分：1000000</p> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#member-credits-accordion" href="#member-credits-collapse-2">
+                                    <span>您的活动积分</span>
+                                    <div class="icon">
+                                        <i class="fa fa-lg fa-caret-up"></i>
+                                        <i class="fa fa-lg fa-caret-down"></i>
+                                    </div>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="member-credits-collapse-2" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                <p>当前有效积分：50000</p>
+                                <p>当前积分：1000000</p>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="small">输入办理Bose Club会员卡时预留的手机号码即可完成会员卡绑定，随时随地轻松查询积分。</p>
+                <p class="small highlight">会员通过BOSE官方微信平台进行手机与会员身份绑定，以便于第一时间获悉品牌方活动、及会员积分帐户（累积、使用）信息。会员在此明确同意，BOSE可通过会员提供的联系方式向会员发送产品信息、品牌活动信息、会员账户信息以及其他BOSE认为合适的信息。</p>
+            </div>
+            <div class="tab-pane fade" id="member-tab-upload">
+                <h4 class="subtitle text-center">填写须知</h4>
+                <p><i class="fa fa-angle-right"></i> 请完整填写以下信息，以确保顺利补登您的积分</p>
+                <p><i class="fa fa-angle-right"></i> 请仔细看产品外包装及保修卡上得信息后填写</p>
+                <p><i class="fa fa-angle-right"></i> 请确保发票上的字迹清晰，并拥有购买经销商的有效盖章</p>
+                <h4 class="subtitle text-center">产品信息</h4>
+                <form class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">产品SN码</label>
+                        <div class="col-xs-8">
+                            <input type="number" class="form-control" name="mobile" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">购物发票</label>
+                        <div class="col-xs-8">
+                            <input type="file" class="form-control" name="mobile" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-xs-4 control-label">保修登记证</label>
+                        <div class="col-xs-8">
+                            <input type="file" class="form-control" name="mobile" placeholder="">
+                        </div>
+                    </div>
+                    <div class="form-group text-center">
+                        <div class="col-xs-offset-3 col-xs-6">
+                            <button type="submit" class="btn btn-block btn-upload">提交</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="assets/javascripts/vendor/jquery-1.10.2.min.js"></script>
+    <script src="assets/javascripts/vendor/jquery-1.10.2.min.js"></script>
+    <script src="assets/javascripts/vendor/underscore.min.js"></script>
+    <script src="assets/javascripts/vendor/mustache.min.js"></script>
+    <script src="assets/javascripts/vendor/backbone.min.js"></script>
+    <script src="assets/javascripts/vendor/bootstrap.min.js"></script>
+
+    <script src="assets/javascripts/plugins/fastclick.js"></script>
+    <script src="assets/javascripts/plugins/moment.js"></script>
+    <script src="assets/javascripts/plugins/moment.zh-cn.js"></script>
+
+    <script src="assets/javascripts/amour.js"></script>
+    <script src="assets/javascripts/app.js"></script>
+
+</body>
+</html>

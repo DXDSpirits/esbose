@@ -1,0 +1,133 @@
+.view {
+  position: relative; }
+
+#view-member {
+  background: url(../images/member-bg.jpg) no-repeat center;
+  background-size: cover;
+  padding: 30px 20px 20px;
+  color: #000; }
+  #view-member a {
+    color: #000; }
+  #view-member .nav-tabs {
+    border-bottom: 0; }
+    #view-member .nav-tabs > li {
+      width: 33.333333%;
+      border-style: solid;
+      border-color: rgba(255, 255, 255, 0.7);
+      border-width: 0 0 2px 0; }
+      #view-member .nav-tabs > li > a {
+        border: 0;
+        margin: 0;
+        border-radius: 0;
+        background-color: transparent;
+        color: #000; }
+      #view-member .nav-tabs > li.active {
+        box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.2);
+        border-width: 2px 2px 0 2px;
+        border-radius: 4px 4px 0 0; }
+        #view-member .nav-tabs > li.active > a {
+          background-color: rgba(244, 230, 177, 0.5); }
+  #view-member .tab-content {
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.7);
+    border-width: 0 2px 2px 2px;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    background-color: rgba(244, 230, 177, 0.5); }
+  #view-member .tab-pane {
+    padding: 15px; }
+
+#member-tab-register .control-label {
+  padding-top: 7px;
+  padding-right: 0;
+  color: #333333; }
+#member-tab-register .form-control, #member-tab-register .btn {
+  background-color: #caaf7d;
+  border-color: #ac8a50;
+  border-radius: 0; }
+#member-tab-register .btn {
+  border-color: #caaf7d;
+  color: #fff; }
+#member-tab-register .col-btn-send {
+  padding-left: 0; }
+  #member-tab-register .col-btn-send .btn {
+    font-size: 12px;
+    padding: 7px 0; }
+#member-tab-register > p, #member-tab-register .help-block, #member-tab-register .checkbox {
+  color: #ac8a50; }
+#member-tab-register .highlight {
+  background-color: #caaf7d;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 15px; }
+
+#member-tab-credits {
+  color: #ac8a50; }
+  #member-tab-credits .highlight {
+    background-color: #caaf7d;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 15px; }
+  #member-tab-credits .panel-group {
+    margin: 20px; }
+  #member-tab-credits .panel-heading {
+    background-color: #caaf7d;
+    border-radius: 0;
+    padding: 0; }
+    #member-tab-credits .panel-heading a {
+      position: relative;
+      display: block;
+      color: #fff;
+      padding: 10px 37px 10px 15px;
+      text-align: center; }
+    #member-tab-credits .panel-heading .icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 37px;
+      width: 37px;
+      padding-top: 10px;
+      background-color: rgba(255, 255, 255, 0.9);
+      color: #caaf7d; }
+      #member-tab-credits .panel-heading .icon .fa-caret-up {
+        display: none; }
+      #member-tab-credits .panel-heading .icon .fa-caret-down {
+        display: inline-block; }
+      #member-tab-credits .panel-heading .icon.in .fa-caret-up {
+        display: inline-block; }
+      #member-tab-credits .panel-heading .icon.in .fa-caret-down {
+        display: none; }
+  #member-tab-credits .panel-body {
+    border-color: #caaf7d;
+    background-color: #d8bc86;
+    color: #835612; }
+  #member-tab-credits .panel-group .panel + .panel {
+    margin-top: 15px; }
+  #member-tab-credits .panel {
+    border-color: #caaf7d;
+    border-radius: 0; }
+
+#member-tab-upload {
+  color: #ac8a50; }
+  #member-tab-upload .subtitle {
+    color: #333333;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(85, 85, 85, 0.1);
+    box-shadow: 0 2px 1px rgba(255, 255, 255, 0.3); }
+  #member-tab-upload p + .subtitle {
+    margin-top: 30px; }
+  #member-tab-upload .control-label {
+    padding-top: 7px;
+    padding-right: 0;
+    color: #ac8a50; }
+  #member-tab-upload .form-control, #member-tab-upload .btn {
+    background-color: #caaf7d;
+    border-color: #ac8a50;
+    border-radius: 0; }
+  #member-tab-upload input.form-control[type=file] {
+    background: transparent;
+    border-color: transparent;
+    padding-left: 0; }
+  #member-tab-upload .btn {
+    border-color: #caaf7d;
+    color: #fff; }
+
+/*# sourceMappingURL=app.css.map */
