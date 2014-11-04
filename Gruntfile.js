@@ -3,18 +3,22 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
         sass: {
             bootstrap: {
+                options: { sourcemap: 'none' },
                 src: 'assets/stylesheets/bootstrap.scss',
                 dest: 'assets/stylesheets/bootstrap.css'
             },
             fontawesome: {
+                options: { sourcemap: 'none' },
                 src: 'assets/stylesheets/font-awesome.scss',
                 dest: 'assets/stylesheets/font-awesome.css'
             },
             amour: {
+                options: { sourcemap: 'none' },
                 src: 'assets/stylesheets/amour.scss',
                 dest: 'assets/stylesheets/amour.css'
             },
             app: {
+                options: { sourcemap: 'none' },
                 src: ['assets/stylesheets/app.scss'],
                 dest: 'assets/stylesheets/app.css'
             }

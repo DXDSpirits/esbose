@@ -56,10 +56,10 @@
   #member-tab-register .form-control, #member-tab-register .btn {
     background-color: #caaf7d;
     border-color: #ac8a50;
-    border-radius: 0; }
-  #member-tab-register .btn {
-    border-color: #caaf7d;
+    border-radius: 0;
     color: #fff; }
+  #member-tab-register .btn {
+    border-color: #caaf7d; }
   #member-tab-register .col-btn-send {
     padding-left: 0; }
     #member-tab-register .col-btn-send .btn {
@@ -143,5 +143,3 @@
   #member-tab-upload .btn {
     border-color: #caaf7d;
     color: #fff; }
-
-/*# sourceMappingURL=app.css.map */
