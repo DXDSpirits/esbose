@@ -405,11 +405,23 @@
         });
     };
     
+    var fillImages = function() {
+        $('img[data-src]').each(function() {
+            var src = $(this).data('src');
+            src && Amour.loadImage($(this), src);
+        });
+        $('.img[data-bg-src]').each(function() {
+            var src = $(this).data('bg-src');
+            src && Amour.loadBgImage($(this), src);
+        });
+    };
+    
     /* 
      * Export
      */
     initSync();
     initAjaxEvents();
+    fillImages();
     window.Amour = Amour;
     
 })();

@@ -1,4 +1,5 @@
-<div class="view" id="view-member">
+<div class="img" id="view-member-bg" data-bg-src="images/member-bg.jpg"></div>
+<div class="view img" id="view-member" data-bg-src="images/member-bg.jpg">
     <ul class="nav nav-tabs" role="tablist">
         <li class="active"><a href="#member-tab-register" role="tab" data-toggle="tab">会员绑定</a></li>
         <li><a href="#member-tab-credits" role="tab" data-toggle="tab">积分查询</a></li>
@@ -22,7 +23,7 @@
                         <button class="btn btn-block btn-send">发送验证码</button>
                     </div>
                 </div>
-                <span class="help-block">请填写您办理会员时预留的手机号码进行绑定</span>
+                <div class="small">请填写您办理会员时预留的手机号码进行绑定</div>
                 <div class="form-group">
                     <div class="col-xs-offset-2 col-xs-10">
                         <div class="checkbox">
@@ -85,9 +86,9 @@
         </div>
         <div class="tab-pane fade" id="member-tab-upload">
             <h4 class="subtitle text-center">填写须知</h4>
-            <p><i class="fa fa-angle-right"></i> 请完整填写以下信息，以确保顺利补登您的积分</p>
-            <p><i class="fa fa-angle-right"></i> 请仔细看产品外包装及保修卡上得信息后填写</p>
-            <p><i class="fa fa-angle-right"></i> 请确保发票上的字迹清晰，并拥有购买经销商的有效盖章</p>
+            <p class="small"><i class="fa fa-angle-right"></i> 请完整填写以下信息，以确保顺利补登您的积分</p>
+            <p class="small"><i class="fa fa-angle-right"></i> 请仔细看产品外包装及保修卡上得信息后填写</p>
+            <p class="small"><i class="fa fa-angle-right"></i> 请确保发票上的字迹清晰，并拥有购买经销商的有效盖章</p>
             <h4 class="subtitle text-center">产品信息</h4>
             <form class="form-horizontal" role="form">
                 <div class="form-group">
@@ -108,7 +109,7 @@
                         <input type="file" class="form-control" name="mobile" placeholder="">
                     </div>
                 </div>
-                <div class="form-group text-center">
+                <div class="row text-center">
                     <div class="col-xs-offset-3 col-xs-6">
                         <button type="submit" class="btn btn-block btn-upload">提交</button>
                     </div>

@@ -1,13 +1,17 @@
 (function() {
     
     $('.view').css('min-height', $(window).height());
+    $('#view-member-bg').css({
+        height: $(window).height(),
+        width: $(window).width()
+    });
     
     function onBridgeReady() {
         WeixinJSBridge.call('hideOptionMenu');
     }
     
     if (typeof WeixinJSBridge == "undefined") {
-        $(document).on('WeixinJSBridgeReady', onBridgeReady, false);
+        $(document).on('WeixinJSBridgeReady', onBridgeReady);
     } else {
         onBridgeReady();
     }

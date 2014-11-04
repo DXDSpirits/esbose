@@ -1,11 +1,17 @@
 .view {
   position: relative; }
 
+#view-member-bg {
+  display: none;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0; }
+
 #view-member {
-  background: url(../images/member-bg.jpg) repeat top;
-  background-size: cover;
-  background-attachment: fixed;
-  padding: 30px 20px 20px;
+  background-position: top;
+  background-size: 100% 100%;
+  padding: 10px;
   color: #000; }
   #view-member a {
     color: #000; }
@@ -21,7 +27,8 @@
         margin: 0;
         border-radius: 0;
         background-color: transparent;
-        color: #000; }
+        color: #000;
+        text-align: center; }
       #view-member .nav-tabs > li.active {
         box-shadow: 0 -3px 3px rgba(0, 0, 0, 0.2);
         border-width: 2px 2px 0 2px;
@@ -36,37 +43,41 @@
     box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
     background-color: rgba(244, 230, 177, 0.5); }
   #view-member .tab-pane {
-    padding: 15px; }
+    padding: 10px; }
 
-#member-tab-register .control-label {
-  padding-top: 7px;
-  padding-right: 0;
-  color: #333333; }
-#member-tab-register .form-control, #member-tab-register .btn {
-  background-color: #caaf7d;
-  border-color: #ac8a50;
-  border-radius: 0; }
-#member-tab-register .btn {
-  border-color: #caaf7d;
-  color: #fff; }
-#member-tab-register .col-btn-send {
-  padding-left: 0; }
-  #member-tab-register .col-btn-send .btn {
-    font-size: 12px;
-    padding: 7px 0; }
-#member-tab-register > p, #member-tab-register .help-block, #member-tab-register .checkbox {
+#member-tab-register {
   color: #ac8a50; }
-#member-tab-register .highlight {
-  background-color: #caaf7d;
-  color: rgba(255, 255, 255, 0.9);
-  padding: 15px; }
+  #member-tab-register form {
+    margin-top: 5px; }
+  #member-tab-register .control-label {
+    padding-top: 7px;
+    padding-right: 0;
+    color: #333333; }
+  #member-tab-register .form-control, #member-tab-register .btn {
+    background-color: #caaf7d;
+    border-color: #ac8a50;
+    border-radius: 0; }
+  #member-tab-register .btn {
+    border-color: #caaf7d;
+    color: #fff; }
+  #member-tab-register .col-btn-send {
+    padding-left: 0; }
+    #member-tab-register .col-btn-send .btn {
+      font-size: 12px;
+      padding: 7px 0; }
+  #member-tab-register .highlight {
+    background-color: #caaf7d;
+    color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    margin-bottom: 0; }
 
 #member-tab-credits {
   color: #ac8a50; }
   #member-tab-credits .highlight {
     background-color: #caaf7d;
     color: rgba(255, 255, 255, 0.9);
-    padding: 15px; }
+    padding: 10px;
+    margin-bottom: 0; }
   #member-tab-credits .panel-group {
     margin: 20px; }
   #member-tab-credits .panel-heading {
@@ -114,7 +125,9 @@
     border-bottom: 1px solid rgba(85, 85, 85, 0.1);
     box-shadow: 0 2px 1px rgba(255, 255, 255, 0.3); }
   #member-tab-upload p + .subtitle {
-    margin-top: 30px; }
+    margin-top: 20px; }
+  #member-tab-upload form {
+    margin-bottom: 10px; }
   #member-tab-upload .control-label {
     padding-top: 7px;
     padding-right: 0;
