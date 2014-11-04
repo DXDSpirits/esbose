@@ -2,8 +2,9 @@
   position: relative; }
 
 #view-member {
-  background: url(../images/member-bg.jpg) no-repeat center;
+  background: url(../images/member-bg.jpg) repeat top;
   background-size: cover;
+  background-attachment: fixed;
   padding: 30px 20px 20px;
   color: #000; }
   #view-member a {

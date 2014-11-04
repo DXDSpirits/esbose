@@ -5,8 +5,9 @@ $gold-dark: #ac8a50;
 $gold-darker: #835612;
 
 #view-member {
-    background: url(#{$static-url}images/member-bg.jpg) no-repeat center;
+    background: url(#{$static-url}images/member-bg.jpg) repeat top;
     background-size: cover;
+    background-attachment: fixed;
     padding: 30px 20px 20px;
     color: #000;
     a { color: #000; }
