@@ -2,6 +2,16 @@
     
     $('.view').css('min-height', $(window).height());
     
+    function onBridgeReady() {
+        WeixinJSBridge.call('hideOptionMenu');
+    }
+    
+    if (typeof WeixinJSBridge == "undefined") {
+        $(document).on('WeixinJSBridgeReady', onBridgeReady, false);
+    } else {
+        onBridgeReady();
+    }
+    
     new (Amour.View.extend({
         events: {
             'hide.bs.collapse .panel-collapse': 'hidePanel',
