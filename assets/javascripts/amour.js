@@ -394,7 +394,7 @@
         $(document).ajaxStop(function () {
             Amour.ajax.trigger('stop');
         });
-        $(document).ajaxError(function (event, jqxhr, settings, exception) {
+        /*$(document).ajaxError(function (event, jqxhr, settings, exception) {
             var response = jqxhr.responseJSON || {};
             if (jqxhr.status == 401 || jqxhr.status == 403 || jqxhr.status == 499) {
                 Amour.TokenAuth.clear();
@@ -402,7 +402,7 @@
             } else if (settings.type == 'GET' && jqxhr.statusText != 'abort') {
                 Amour.ajax.trigger('error');
             }
-        });
+        });*/
     };
     
     var fillImages = function() {
@@ -419,7 +419,7 @@
     /* 
      * Export
      */
-    initSync();
+    //initSync();
     initAjaxEvents();
     fillImages();
     window.Amour = Amour;
