@@ -167,14 +167,15 @@ $gold-darker: #835612;
         background-color: $gold;
         border-color: $gold-dark;
         border-radius: 0;
+        color: #fff;
     }
     input.form-control[type=file] {
         background: transparent;
         border-color: transparent;
         padding-left: 0;
+        color: $gold-dark;
     }
     .btn {
         border-color: $gold;
-        color: #fff;
     }
 }

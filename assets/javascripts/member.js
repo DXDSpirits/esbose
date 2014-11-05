@@ -60,7 +60,7 @@
         sendCode: function(e) {
             e.preventDefault && e.preventDefault();
             var self = this;
-            var url = Amour.APIHost + '/BoseWechat/Api/Sms/SendValidCodeWithReturn';
+            var url = Amour.APIHost + '/BoseWechat.Service/Api/Sms/SendValidCodeWithReturn';
             $.post(url, {
                 'mobile': this.$('input[name=mobile]').val(),
                 'openid': openId
@@ -72,7 +72,7 @@
         register: function(e) {
             e.preventDefault && e.preventDefault();
             var self = this;
-            var url = Amour.APIHost + '/BoseWechat/Api/MemberCenter/MemberBinding';
+            var url = Amour.APIHost + '/BoseWechat.Service/Api/MemberCenter/MemberBinding';
             $.post(url, {
                 'mobile': this.$('input[name=mobile]').val(),
                 'validcode': this.$('input[name=code]').val(),
@@ -83,7 +83,7 @@
         },
         getToken: function() {
             var self = this;
-            var url = Amour.APIHost + '/BoseWechat/Api/Token';
+            var url = Amour.APIHost + '/BoseWechat.Service/Api/Token';
             $.get(url, {
                 'mobile': this.$('input[name=mobile]').val(),
                 'openid': openId
@@ -91,6 +91,7 @@
                 console.log(data.Result);
                 localStorage.setItem('auth-token', data.Result);
                 pages.credits.render();
+                $('#member-nav-credits').tab('show');
             });
         }
     }))({
@@ -117,11 +118,17 @@
             var token = localStorage.getItem('auth-token');
             if (!token) return;
             var self = this;
-            var url = Amour.APIHost + '/BoseWechat/Api/MemberCenter/PointsSearch';
+            var url = Amour.APIHost + '/BoseWechat.Service/Api/MemberCenter/PointsSearch';
             $.get(url, {
                 'ticket': token
             }, function(data) {
                 console.log(data.Result);
+                var BP = data.Result.BusinessPoints;
+                var CP = data.Result.CampaignPoints;
+                self.$('.BP-Total').text(BP.TotalPoints);
+                self.$('.BP-Valid').text(BP.ValidPoints);
+                self.$('.CP-Total').text(BP.TotalPoints);
+                self.$('.CP-Valid').text(BP.ValidPoints);
             });
         }
     }))({
@@ -158,12 +165,13 @@
             e.preventDefault && e.preventDefault();
             this.productData['SerialNumber'] = this.$('input[name=serial]').val();
             var self = this;
-            var url = Amour.APIHost + '/BoseWechat/Api/MemberCenter/MemberAdding';
+            var url = Amour.APIHost + '/BoseWechat.Service/Api/MemberCenter/MemberAdding';
             $.post(url, {
                 'OpenID': openId,
                 'Product': this.productData
             }, function(data) {
                 console.log(data);
+                alert('提交成功');
             });
         }
     }))({

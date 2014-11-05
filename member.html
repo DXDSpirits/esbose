@@ -55,9 +55,15 @@
     <div class="img" id="view-member-bg" data-bg-src="images/member-bg.jpg"></div>
     <div class="view img" id="view-member" data-bg-src="images/member-bg.jpg">
         <ul class="nav nav-tabs" role="tablist">
-            <li class="active"><a href="#member-tab-register" role="tab" data-toggle="tab">会员绑定</a></li>
-            <li><a href="#member-tab-credits" role="tab" data-toggle="tab">积分查询</a></li>
-            <li><a href="#member-tab-upload" role="tab" data-toggle="tab">入会补登</a></li>
+            <li class="active">
+                <a href="#member-tab-register" id="member-nav-register" role="tab" data-toggle="tab">会员绑定</a>
+            </li>
+            <li>
+                <a href="#member-tab-credits" id="member-nav-credits" role="tab" data-toggle="tab">积分查询</a>
+            </li>
+            <li>
+                <a href="#member-tab-upload" id="member-nav-upload" role="tab" data-toggle="tab">入会补登</a>
+            </li>
         </ul>
         <div class="tab-content">
             <div class="tab-pane fade in active" id="member-tab-register">
@@ -110,8 +116,8 @@
                         </div>
                         <div id="member-credits-collapse-1" class="panel-collapse collapse in">
                             <div class="panel-body">
-                                <p>当前有效积分：50000</p>
-                                <p>当前积分：1000000</p> 
+                                <p>当前有效积分：<span class='BP-Total'></span></p>
+                                <p>当前积分：<span class='BP-Valid'></span></p> 
                             </div>
                         </div>
                     </div>
@@ -129,8 +135,8 @@
                         </div>
                         <div id="member-credits-collapse-2" class="panel-collapse collapse">
                             <div class="panel-body">
-                                <p>当前有效积分：50000</p>
-                                <p>当前积分：1000000</p>  
+                                <p>当前有效积分：<span class='CP-Total'></span></p>
+                                <p>当前积分：<span class='CP-Valid'></span></p>  
                             </div>
                         </div>
                     </div>

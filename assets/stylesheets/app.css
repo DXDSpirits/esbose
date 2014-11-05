@@ -175,11 +175,12 @@
   #member-tab-upload .form-control, #member-tab-upload .btn {
     background-color: #caaf7d;
     border-color: #ac8a50;
-    border-radius: 0; }
+    border-radius: 0;
+    color: #fff; }
   #member-tab-upload input.form-control[type=file] {
     background: transparent;
     border-color: transparent;
-    padding-left: 0; }
+    padding-left: 0;
+    color: #ac8a50; }
   #member-tab-upload .btn {
-    border-color: #caaf7d;
-    color: #fff; }
+    border-color: #caaf7d; }
