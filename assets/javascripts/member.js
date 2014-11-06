@@ -1,6 +1,7 @@
 (function() {
     
-    var openId = '7777777';
+    var match = window.location.search.match(/[\?\&]openid=(\d+)(&|$)/);
+    var openId = match ? +match[1] : '7777777';
     
     $('.view').css('min-height', $(window).height());
     $('#view-member-bg').css({
