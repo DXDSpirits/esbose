@@ -65,12 +65,18 @@
                 'mobile': this.$('input[name=mobile]').val(),
                 'openid': openId
             }, function(data) {
-                console.log(data.Result);
-                self.$('input[name=code]').val(data.Result);
+                console.log(data);
+                if (!data) return;
+                if (data.Code == 0) {
+                    self.$('input[name=code]').val(data.Result);
+                } else {
+                    alert(data.Description);
+                }
             });
         },
         register: function(e) {
             e.preventDefault && e.preventDefault();
+            if (!this.$('input[type=checkbox]').is(':checked')) return;
             var self = this;
             var url = Amour.APIHost + '/BoseWechat.Service/Api/MemberCenter/MemberBinding';
             $.post(url, {
@@ -78,6 +84,11 @@
                 'validcode': this.$('input[name=code]').val(),
                 'openid': openId
             }, function(data) {
+                console.log(data);
+                if (!data) return;
+                if (data.Code != 0) {
+                    alert(data.Description);
+                }
                 self.getToken();
             });
         },
@@ -88,10 +99,13 @@
                 'mobile': this.$('input[name=mobile]').val(),
                 'openid': openId
             }, function(data) {
-                console.log(data.Result);
-                localStorage.setItem('auth-token', data.Result);
-                pages.credits.render();
-                $('#member-nav-credits').tab('show');
+                console.log(data);
+                if (!data) return;
+                if (data.Code == 0) {
+                    localStorage.setItem('auth-token', data.Result);
+                    pages.credits.render();
+                    $('#member-nav-credits').tab('show');
+                }
             });
         }
     }))({
@@ -122,13 +136,18 @@
             $.get(url, {
                 'ticket': token
             }, function(data) {
-                console.log(data.Result);
-                var BP = data.Result.BusinessPoints;
-                var CP = data.Result.CampaignPoints;
-                self.$('.BP-Total').text(BP.TotalPoints);
-                self.$('.BP-Valid').text(BP.ValidPoints);
-                self.$('.CP-Total').text(BP.TotalPoints);
-                self.$('.CP-Valid').text(BP.ValidPoints);
+                console.log(data);
+                if (!data) return;
+                if (data.Code == 0) {
+                    var BP = data.Result.BusinessPoints;
+                    var CP = data.Result.CampaignPoints;
+                    self.$('.BP-Total').text(BP.TotalPoints);
+                    self.$('.BP-Valid').text(BP.ValidPoints);
+                    self.$('.CP-Total').text(BP.TotalPoints);
+                    self.$('.CP-Valid').text(BP.ValidPoints);
+                } else {
+                    alert(data.Description);
+                }
             });
         }
     }))({
@@ -171,7 +190,13 @@
                 'Product': this.productData
             }, function(data) {
                 console.log(data);
-                alert('提交成功');
+                if (!data) return;
+                if (data.Code == 0) {
+                    alert('提交成功');
+                    self.$('input').val('');
+                } else {
+                    alert(data.Description);
+                }
             });
         }
     }))({
