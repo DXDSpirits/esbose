@@ -156,8 +156,8 @@
                     var CP = data.Result.CampaignPoints;
                     self.$('.BP-Total').text(BP.TotalPoints);
                     self.$('.BP-Valid').text(BP.ValidPoints);
-                    self.$('.CP-Total').text(BP.TotalPoints);
-                    self.$('.CP-Valid').text(BP.ValidPoints);
+                    self.$('.CP-Total').text(CP.TotalPoints);
+                    self.$('.CP-Valid').text(CP.ValidPoints);
                 } else {
                     alert(data.Description);
                 }
