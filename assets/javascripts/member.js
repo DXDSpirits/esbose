@@ -1,7 +1,7 @@
 (function() {
     
-    var match = window.location.search.match(/[\?\&]openid=(\d+)(&|$)/);
-    var openId = match ? +match[1] : 0;
+    var match = window.location.search.match(/[\?\&]openid=(\w+)(&|$)/);
+    var openId = match ? match[1] : '';
     
     $('.view').css('min-height', $(window).height());
     $('#view-member-bg').css({
@@ -58,12 +58,18 @@
             'click .btn-send': 'sendCode',
             'click .btn-bind': 'register',
         },
+        initView: function() {
+            this.getToken();
+        },
         sendCode: function(e) {
             e.preventDefault && e.preventDefault();
+            var mobile = this.$('input[name=mobile]').val();
+            if (!mobile) return;
+            localStorage.setItem('mobile', mobile);
             var self = this;
             var url = Amour.APIHost + '/BoseWechat.Service/Api/Sms/SendValidCodeWithReturn';
             $.post(url, {
-                'mobile': this.$('input[name=mobile]').val(),
+                'mobile': mobile,
                 'openid': openId
             }, function(data) {
                 console.log(data);
@@ -77,12 +83,16 @@
         },
         register: function(e) {
             e.preventDefault && e.preventDefault();
+            var mobile = this.$('input[name=mobile]').val();
+            var code = this.$('input[name=code]').val();
+            if (!mobile || !code) return;
+            localStorage.setItem('mobile', mobile);
             if (!this.$('input[type=checkbox]').is(':checked')) return;
             var self = this;
             var url = Amour.APIHost + '/BoseWechat.Service/Api/MemberCenter/MemberBinding';
             $.post(url, {
-                'mobile': this.$('input[name=mobile]').val(),
-                'validcode': this.$('input[name=code]').val(),
+                'mobile': mobile,
+                'validcode': code,
                 'openid': openId
             }, function(data) {
                 console.log(data);
@@ -94,10 +104,12 @@
             });
         },
         getToken: function() {
+            var mobile = localStorage.getItem('mobile');
+            if (!mobile) return;
             var self = this;
             var url = Amour.APIHost + '/BoseWechat.Service/Api/Token';
             $.get(url, {
-                'mobile': this.$('input[name=mobile]').val(),
+                'mobile': mobile,
                 'openid': openId
             }, function(data) {
                 console.log(data);
@@ -119,7 +131,7 @@
             'show.bs.collapse .panel-collapse': 'showPanel'
         },
         initView: function() {
-            this.render();
+            //this.render();
         },
         hidePanel: function(e) {
             var $target = $(e.currentTarget);
