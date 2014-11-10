@@ -195,11 +195,17 @@
         },
         sendUpload: function(e) {
             e.preventDefault && e.preventDefault();
+            var token = localStorage.getItem('auth-token');
+            if (!token) {
+                alert('请先绑定会员');
+                return;
+            };
             this.productData['SerialNumber'] = this.$('input[name=serial]').val();
             var self = this;
             var url = Amour.APIHost + '/BoseWechat.Service/Api/MemberCenter/MemberAdding';
             $.post(url, {
-                'OpenID': openId,
+                //'OpenID': openId,
+                'Ticket': token,
                 'Product': this.productData
             }, function(data) {
                 console.log(data);
