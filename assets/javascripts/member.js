@@ -53,6 +53,10 @@
     
     var pages = {};
     
+    $('#member-nav-credits').on('shown.bs.tab', function() {
+        pages.credits.render();
+    });
+    
     pages.register = new (Amour.View.extend({
         events: {
             'click .btn-send': 'sendCode',
@@ -116,7 +120,6 @@
                 if (!data) return;
                 if (data.Code == 0) {
                     localStorage.setItem('auth-token', data.Result);
-                    pages.credits.render();
                     $('#member-nav-credits').tab('show');
                 }
             });
@@ -143,7 +146,10 @@
         },
         render: function() {
             var token = localStorage.getItem('auth-token');
-            if (!token) return;
+            if (!token) {
+                alert('请先绑定会员');
+                return;
+            };
             var self = this;
             var url = Amour.APIHost + '/BoseWechat.Service/Api/MemberCenter/PointsSearch';
             $.get(url, {
@@ -167,7 +173,7 @@
         el: $('#member-tab-credits')
     });
     
-    a = pages.upload = new (Amour.View.extend({
+    pages.upload = new (Amour.View.extend({
         events: {
             'change input[name=receipt]': 'uploadReceipt',
             'change input[name=warranty]': 'uploadWarranty',
