@@ -202,7 +202,7 @@
             };
             this.productData['SerialNumber'] = this.$('input[name=serial]').val();
             var self = this;
-            var url = Amour.APIHost + '/BoseWechat.Service/Api/MemberCenter/MemberAdding';
+            var url = Amour.APIHost + '/BoseWechat.Service/Api/MemberCenter/PointsAdding';
             $.post(url, {
                 //'OpenID': openId,
                 'Ticket': token,
