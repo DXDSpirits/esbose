@@ -184,3 +184,26 @@
     color: #ac8a50; }
   #member-tab-upload .btn {
     border-color: #caaf7d; }
+
+#view-portal-bose > .background {
+  background-position: bottom; }
+#view-portal-bose .buttons-stack {
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  left: 10%;
+  margin-bottom: 10%; }
+#view-portal-bose .nav-btn {
+  display: block;
+  margin-top: 4%;
+  width: 48%;
+  padding: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  background-color: #b8f9ef;
+  color: #17554a; }
+  #view-portal-bose .nav-btn:first-child {
+    width: 100%; }
+  #view-portal-bose .nav-btn:nth-child(2n) {
+    margin-right: 4%; }
+  #view-portal-bose .nav-btn:active, #view-portal-bose .nav-btn:focus {
+    background-color: #89f5e4; }
