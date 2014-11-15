@@ -207,3 +207,28 @@
     margin-right: 4%; }
   #view-portal-bose .nav-btn:active, #view-portal-bose .nav-btn:focus {
     background-color: #89f5e4; }
+
+#view-nav-products > .background {
+  background-position: bottom; }
+#view-nav-products .buttons-stack {
+  position: absolute;
+  bottom: 0;
+  width: 80%;
+  left: 10%;
+  margin-bottom: 15%; }
+#view-nav-products .nav-btn {
+  display: block;
+  margin-top: 4%;
+  width: 48%;
+  padding: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  background-color: #def1f1;
+  color: #622105; }
+  #view-nav-products .nav-btn:first-child {
+    width: 100%; }
+  #view-nav-products .nav-btn:nth-child(2n) {
+    margin-right: 4%; }
+  #view-nav-products .nav-btn:active, #view-nav-products .nav-btn:focus {
+    background-color: #89f5e4; }
+  #view-nav-products .nav-btn.disable {
+    background-color: rgba(222, 241, 241, 0.5); }
