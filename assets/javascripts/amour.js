@@ -1,5 +1,7 @@
 (function() {
     
+    $('.view').css('min-height', $(window).height());
+    
     if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
         var msViewportStyle = document.createElement("style");
         msViewportStyle.appendChild(

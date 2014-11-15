@@ -3,7 +3,6 @@
     var match = window.location.search.match(/[\?\&]openid=(\w+)(&|$)/);
     var openId = match ? match[1] : '';
     
-    $('.view').css('min-height', $(window).height());
     $('#view-member-bg').css({
         height: $(window).height(),
         width: $(window).width()
