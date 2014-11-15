@@ -1,45 +1,20 @@
 <!DOCTYPE html>
-
 <html class="no-js">
-
 <head>
-    
     include "includes/metadata.html"
-    
     <title>会员中心</title>
-    
-    <link rel="stylesheet" href="assets/stylesheets/bootstrap.css">
-    <link rel="stylesheet" href="assets/stylesheets/font-awesome.css">
-    <link rel="stylesheet" href="assets/stylesheets/amour.css">
-    <link rel="stylesheet" href="assets/stylesheets/app.css">
-    
+    include "includes/stylesheets.html"
     <script src="assets/javascripts/vendor/modernizr-2.7.1.min.js"></script>
-    
 </head>
 <body>
-    
     <div id="apploader" class="invisible">
         <div class="loader">
             <div class="loading-sprite"></div>
             <p class="ajax-error hidden">网络不给力啊，请稍后再试！</p>
         </div>
     </div>
-    
-    include "pages/member.html"
-    
-    <script src="assets/javascripts/vendor/jquery-1.10.2.min.js"></script>
-    <script src="assets/javascripts/vendor/underscore.min.js"></script>
-    <script src="assets/javascripts/vendor/mustache.min.js"></script>
-    <script src="assets/javascripts/vendor/backbone.min.js"></script>
-    <script src="assets/javascripts/vendor/bootstrap.min.js"></script>
-    
-    <script src="assets/javascripts/plugins/fastclick.js"></script>
-    <script src="assets/javascripts/plugins/moment.js"></script>
-    <script src="assets/javascripts/plugins/moment.zh-cn.js"></script>
-    
-    <script src="assets/javascripts/amour.js"></script>
-    
+    include "sections/member-tabs.html"
+    include "includes/javascripts.html"
     <script src="assets/javascripts/member.js"></script>
-    
 </body>
 </html>
