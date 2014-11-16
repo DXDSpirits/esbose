@@ -208,6 +208,24 @@
   #view-portal-bose .nav-btn:active, #view-portal-bose .nav-btn:focus {
     background-color: #89f5e4; }
 
+#view-nav-bosestyle > .background {
+  background-position: top; }
+#view-nav-bosestyle .buttons-stack {
+  position: absolute;
+  top: 0;
+  width: 80%;
+  left: 10%;
+  margin-top: 110%; }
+#view-nav-bosestyle .nav-btn {
+  display: block;
+  margin: 2%;
+  width: 46%;
+  padding: 10px;
+  background-color: #465c7d;
+  color: #fff; }
+  #view-nav-bosestyle .nav-btn:active, #view-nav-bosestyle .nav-btn:focus {
+    background-color: #34445c; }
+
 #view-nav-products > .background {
   background-position: bottom; }
 #view-nav-products .buttons-stack {
