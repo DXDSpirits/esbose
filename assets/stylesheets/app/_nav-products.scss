@@ -17,3 +17,67 @@
         }
     }
 }
+
+#view-page-new-products {
+    .scroll {
+        overflow: hidden;
+    }
+    .scroll-item {
+        position: relative;
+    }
+    .scroll-item-1 {
+        .background {
+            background-color: #cfcece;
+            background-size: 100% auto;
+            background-position: top;
+        }
+    }
+    .scroll-item-2 {
+        .background.boy {
+            z-index: -1;
+            height: 33%;
+            top: 0;
+            bottom: auto;
+        }
+        .background.girl {
+            z-index: -1;
+            height: 33%;
+            bottom: 0;
+            top: auto;
+        }
+        .background.hero {
+            z-index: 1;
+            height: 34%;
+            bottom: 33%;
+            top: 33%;
+            right: 0;
+            background-size: contain;
+            background-position: top;
+            background-color: #fff;
+        }
+        .background.text-boy {
+            z-index: 2;
+            height: 10%;
+            top: auto;
+            bottom: 70%;
+            background-size: contain;
+            background-position: bottom right;
+        }
+        .background.text-girl {
+            z-index: 2;
+            height: 10%;
+            top: auto;
+            bottom: 5%;
+            background-size: contain;
+            background-position: bottom left;
+        }
+    }
+    .gesture-up {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        bottom: 0;
+        font-size: 50px;
+        color: rgba(#fff, 0.5);
+    }
+}
