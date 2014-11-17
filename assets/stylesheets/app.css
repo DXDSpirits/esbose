@@ -64,6 +64,93 @@
     height: 32px;
     width: 100%; }
 
+#view-portal-bose > .background {
+  background-position: bottom; }
+#view-portal-bose .nav-btn {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  background-color: #b8f9ef;
+  color: #17554a; }
+  #view-portal-bose .nav-btn:active, #view-portal-bose .nav-btn:focus {
+    background-color: #89f5e4; }
+
+#view-nav-bosestyle > .background {
+  background-size: contain;
+  background-position: top;
+  background-color: #000; }
+#view-nav-bosestyle .buttons-stack {
+  margin-top: 110%; }
+#view-nav-bosestyle .nav-btn {
+  background-color: #465c7d;
+  color: #fff; }
+  #view-nav-bosestyle .nav-btn:active, #view-nav-bosestyle .nav-btn:focus {
+    background-color: #34445c; }
+
+#view-nav-products > .background {
+  background-position: bottom; }
+#view-nav-products .buttons-stack {
+  margin-bottom: 15%; }
+#view-nav-products .nav-btn {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  background-color: #def1f1;
+  color: #622105; }
+  #view-nav-products .nav-btn:active, #view-nav-products .nav-btn:focus {
+    background-color: #89f5e4; }
+  #view-nav-products .nav-btn.disable {
+    background-color: rgba(222, 241, 241, 0.5); }
+
+#view-nav-products-catogry > .background {
+  background-size: 100% 100%; }
+#view-nav-products-catogry .banner {
+  width: 100%;
+  padding-top: 54.53125%; }
+#view-nav-products-catogry .catogry-item {
+  display: block;
+  width: 44%;
+  margin: 4%;
+  padding-top: 41.526%; }
+  #view-nav-products-catogry .catogry-item:nth-child(n+3) {
+    margin-top: 0; }
+  #view-nav-products-catogry .catogry-item:nth-child(2n) {
+    margin-left: 0; }
+
+#view-nav-brand > .background {
+  background-size: contain;
+  background-position: top;
+  background-color: #f2f0ea; }
+#view-nav-brand .nav-btn {
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+  background-color: #afe8f9;
+  color: #004b62; }
+  #view-nav-brand .nav-btn:active, #view-nav-brand .nav-btn:focus {
+    background-color: #80daf5; }
+
+#view-page-channels {
+  padding: 40px 30px; }
+  #view-page-channels > .background {
+    background-size: 100% 100%; }
+  #view-page-channels .channel {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px; }
+    #view-page-channels .channel .img, #view-page-channels .channel .text {
+      display: inline-block;
+      vertical-align: middle; }
+    #view-page-channels .channel .img {
+      height: 60px;
+      width: 60px;
+      background-size: contain;
+      margin-right: 15px; }
+    #view-page-channels .channel .text {
+      color: #4d4d4d; }
+
+#view-page-bose-global > .background {
+  background-size: contain;
+  background-position: top;
+  background-color: #f2f0ea; }
+
 #view-member-bg {
   display: none;
   position: fixed;
@@ -207,63 +294,3 @@
     color: #ac8a50; }
   #member-tab-upload .btn {
     border-color: #caaf7d; }
-
-#view-portal-bose > .background {
-  background-position: bottom; }
-#view-portal-bose .nav-btn {
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-  background-color: #b8f9ef;
-  color: #17554a; }
-  #view-portal-bose .nav-btn:active, #view-portal-bose .nav-btn:focus {
-    background-color: #89f5e4; }
-
-#view-nav-bosestyle > .background {
-  background-size: contain;
-  background-position: top;
-  background-color: #000; }
-#view-nav-bosestyle .buttons-stack {
-  margin-top: 110%; }
-#view-nav-bosestyle .nav-btn {
-  background-color: #465c7d;
-  color: #fff; }
-  #view-nav-bosestyle .nav-btn:active, #view-nav-bosestyle .nav-btn:focus {
-    background-color: #34445c; }
-
-#view-nav-products > .background {
-  background-position: bottom; }
-#view-nav-products .buttons-stack {
-  margin-bottom: 15%; }
-#view-nav-products .nav-btn {
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-  background-color: #def1f1;
-  color: #622105; }
-  #view-nav-products .nav-btn:active, #view-nav-products .nav-btn:focus {
-    background-color: #89f5e4; }
-  #view-nav-products .nav-btn.disable {
-    background-color: rgba(222, 241, 241, 0.5); }
-
-#view-nav-products-catogry > .background {
-  background-size: 100% 100%; }
-#view-nav-products-catogry .banner {
-  width: 100%;
-  padding-top: 54.53125%; }
-#view-nav-products-catogry .catogry-item {
-  display: block;
-  width: 44%;
-  margin: 4%;
-  padding-top: 41.526%; }
-  #view-nav-products-catogry .catogry-item:nth-child(n+3) {
-    margin-top: 0; }
-  #view-nav-products-catogry .catogry-item:nth-child(2n) {
-    margin-left: 0; }
-
-#view-nav-brand > .background {
-  background-size: contain;
-  background-position: top;
-  background-color: #f2f0ea; }
-#view-nav-brand .nav-btn {
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-  background-color: #afe8f9;
-  color: #004b62; }
-  #view-nav-brand .nav-btn:active, #view-nav-brand .nav-btn:focus {
-    background-color: #80daf5; }

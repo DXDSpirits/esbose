@@ -13,3 +13,39 @@
         }
     }
 }
+
+#view-page-channels {
+    > .background {
+        background-size: 100% 100%;
+    }
+    padding: 40px 30px;
+    .channel {
+        display: block;
+        background-color: rgba(#fff, 0.9);
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        margin-top: 20px;
+        padding-left: 15px;
+        padding-right: 15px;
+        .img, .text {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .img {
+            height: 60px;
+            width: 60px;
+            background-size: contain;
+            margin-right: 15px;
+        }
+        .text {
+            color: #4d4d4d;
+        }
+    }
+}
+
+#view-page-bose-global {
+    > .background {
+        background-size: contain;
+        background-position: top;
+        background-color: #f2f0ea;
+    }
+}
