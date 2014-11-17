@@ -15,6 +15,7 @@
   .buttons-stack .nav-btn {
     display: block;
     float: left;
+    text-align: center;
     margin-top: 4%;
     width: 48%;
     padding: 10px; }
@@ -217,7 +218,9 @@
     background-color: #89f5e4; }
 
 #view-nav-bosestyle > .background {
-  background-position: top; }
+  background-size: contain;
+  background-position: top;
+  background-color: #000; }
 #view-nav-bosestyle .buttons-stack {
   margin-top: 110%; }
 #view-nav-bosestyle .nav-btn {
@@ -254,15 +257,17 @@
   #view-nav-products .catogry-item:nth-child(2n) {
     margin-left: 0; }
 
-#view-nav-products > .background {
-  background-position: bottom; }
-#view-nav-products .buttons-stack {
+#view-nav-brand > .background {
+  background-size: contain;
+  background-position: top;
+  background-color: #f2f0ea; }
+#view-nav-brand .buttons-stack {
   margin-bottom: 15%; }
-#view-nav-products .nav-btn {
+#view-nav-brand .nav-btn {
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
   background-color: #def1f1;
   color: #622105; }
-  #view-nav-products .nav-btn:active, #view-nav-products .nav-btn:focus {
+  #view-nav-brand .nav-btn:active, #view-nav-brand .nav-btn:focus {
     background-color: #89f5e4; }
-  #view-nav-products .nav-btn.disable {
+  #view-nav-brand .nav-btn.disable {
     background-color: rgba(222, 241, 241, 0.5); }

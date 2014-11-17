@@ -1,0 +1,21 @@
+#view-nav-brand {
+    > .background {
+        background-size: contain;
+        background-position: top;
+        background-color: #f2f0ea;
+    }
+    .buttons-stack {
+        margin-bottom: 15%;
+    }
+    .nav-btn {
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+        background-color: #def1f1;
+        color: #622105;
+        &:active, &:focus {
+            background-color: darken(#b8f9ef, 10%);
+        }
+        &.disable {
+            background-color: rgba(#def1f1, 0.5);
+        }
+    }
+}

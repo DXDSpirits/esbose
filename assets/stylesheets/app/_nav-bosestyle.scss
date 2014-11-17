@@ -1,6 +1,8 @@
 #view-nav-bosestyle {
     > .background {
+        background-size: contain;
         background-position: top;
+        background-color: #000;
     }
     .buttons-stack {
         margin-top: 110%;
