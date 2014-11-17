@@ -147,9 +147,24 @@
       color: #4d4d4d; }
 
 #view-page-bose-global > .background {
-  background-size: contain;
+  background-size: 100% 100%; }
+#view-page-bose-global .banner {
   background-position: top;
-  background-color: #f2f0ea; }
+  padding-top: 80%; }
+#view-page-bose-global .channel {
+  display: block;
+  padding: 20px; }
+  #view-page-bose-global .channel .img, #view-page-bose-global .channel .text {
+    display: inline-block;
+    vertical-align: middle; }
+  #view-page-bose-global .channel .img {
+    width: 30%;
+    padding-top: 20.56%;
+    background-size: contain; }
+  #view-page-bose-global .channel .text {
+    width: 70%;
+    color: #fff;
+    padding-left: 15px; }
 
 #view-member-bg {
   display: none;

@@ -44,8 +44,28 @@
 
 #view-page-bose-global {
     > .background {
-        background-size: contain;
+        background-size: 100% 100%;
+    }
+    .banner {
         background-position: top;
-        background-color: #f2f0ea;
+        padding-top: 80%;
+    }
+    .channel {
+        display: block;
+        padding: 20px;
+        .img, .text {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .img {
+            width: 30%;
+            padding-top: 20.56%;
+            background-size: contain;
+        }
+        .text {
+            width: 70%;
+            color: #fff;
+            padding-left: 15px;
+        }
     }
 }
