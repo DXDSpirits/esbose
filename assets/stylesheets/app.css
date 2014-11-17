@@ -242,19 +242,19 @@
   #view-nav-products .nav-btn.disable {
     background-color: rgba(222, 241, 241, 0.5); }
 
-#view-nav-products > .background {
+#view-nav-products-catogry > .background {
   background-size: 100% 100%; }
-#view-nav-products .banner {
+#view-nav-products-catogry .banner {
   width: 100%;
   padding-top: 54.53125%; }
-#view-nav-products .catogry-item {
+#view-nav-products-catogry .catogry-item {
   display: block;
   width: 44%;
   margin: 4%;
   padding-top: 41.526%; }
-  #view-nav-products .catogry-item:nth-child(n+3) {
+  #view-nav-products-catogry .catogry-item:nth-child(n+3) {
     margin-top: 0; }
-  #view-nav-products .catogry-item:nth-child(2n) {
+  #view-nav-products-catogry .catogry-item:nth-child(2n) {
     margin-left: 0; }
 
 #view-nav-brand > .background {
