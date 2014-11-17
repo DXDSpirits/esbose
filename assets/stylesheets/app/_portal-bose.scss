@@ -2,24 +2,7 @@
     > .background {
         background-position: bottom;
     }
-    .buttons-stack {
-        position: absolute;
-        bottom: 0;
-        width: 80%;
-        left: 10%;
-        margin-bottom: 10%;
-    }
     .nav-btn {
-        display: block;
-        margin-top: 4%;
-        width: 48%;
-        &:first-child {
-            width: 100%;
-        }
-        &:nth-child(2n) {
-            margin-right: 4%;
-        }
-        padding: 10px;
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
         background-color: #b8f9ef;
         color: #17554a;

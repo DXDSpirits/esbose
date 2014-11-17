@@ -3,17 +3,9 @@
         background-position: top;
     }
     .buttons-stack {
-        position: absolute;
-        top: 0;
-        width: 80%;
-        left: 10%;
         margin-top: 110%;
     }
     .nav-btn {
-        display: block;
-        margin: 2%;
-        width: 46%;
-        padding: 10px;
         background-color: #465c7d;
         color: #fff;
         &:active, &:focus {

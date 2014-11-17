@@ -3,6 +3,29 @@
     position: relative;
 }
 
+// Components
+
+.buttons-stack {
+    position: absolute;
+    bottom: 0;
+    width: 80%;
+    left: 10%;
+    margin-bottom: 10%;
+    @include clearfix();
+    .nav-btn {
+        display: block;
+        float: left;
+        margin-top: 4%;
+        width: 48%;
+        &:first-child {
+            width: 100%;
+        }
+        &:nth-child(2n) {
+            margin-right: 4%;
+        }
+        padding: 10px;
+    }
+}
 
 // Loading sprite
 
