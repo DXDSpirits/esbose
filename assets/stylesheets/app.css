@@ -384,4 +384,16 @@
     #view-coupon-500 input[name="name"] {
       background-position: 0 -32px; }
   #view-coupon-500 select {
-    width: 50%; }
+    width: 50%;
+    -webkit-appearance: none;
+    border-width: 1px 0 0; }
+    #view-coupon-500 select:last-child {
+      border-left-width: 1px; }
+  #view-coupon-500 .select-wrapper {
+    position: relative; }
+    #view-coupon-500 .select-wrapper .fa {
+      position: absolute;
+      top: 10px;
+      right: 3%; }
+    #view-coupon-500 .select-wrapper .fa:first-child {
+      right: 53%; }
