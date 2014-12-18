@@ -358,3 +358,30 @@
     color: #ac8a50; }
   #member-tab-upload .btn {
     border-color: #caaf7d; }
+
+#view-coupon-500 {
+  background: url("../images/coupon-500-bg.jpg") no-repeat top;
+  background-size: 100% auto;
+  padding: 105% 25px 25px; }
+  #view-coupon-500 form {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden; }
+  #view-coupon-500 .form-control, #view-coupon-500 .btn {
+    border-radius: 0; }
+  #view-coupon-500 .btn {
+    background-color: #e61939;
+    color: #fff; }
+  #view-coupon-500 .form-group {
+    margin: 20px 15px; }
+  #view-coupon-500 input {
+    padding-left: 32px;
+    background-image: url("../images/coupon-500-input-icons.png");
+    background-repeat: no-repeat;
+    background-size: 32px 64px; }
+    #view-coupon-500 input[name="mobile"] {
+      background-position: 0 0; }
+    #view-coupon-500 input[name="name"] {
+      background-position: 0 -32px; }
+  #view-coupon-500 select {
+    width: 50%; }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    include "includes/metadata.html"
+    <title>Bose</title>
+    include "includes/stylesheets.html"
+</head>
+<body>
+    
+    <div class="view" id="view-coupon-500">
+        <form>
+            <div class="form-group mobile">
+                <input type="tel" class="form-control" name="mobile" placeholder="手机号 (必填)">
+            </div>
+            <div class="form-group name">
+                <input type="text" class="form-control" name="name" placeholder="姓名 (选填)">
+            </div>
+            <div class="clearfix">
+                <select class="form-control pull-left" name="city">
+                    <option value="">所在城市</option>
+                </select>
+                <select class="form-control pull-left" name="store">
+                    <option value="">是该商场会员</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-block btn-lg">提交</button>
+        </form>
+    </div>
+    
+    include "includes/javascripts.html"
+    <script src="assets/javascripts/CITYSTORE.js"></script>
+    <script>
+        (function() {
+            var $cityOptions = _.chain(CITY_STORE).map(_.iteratee(0)).uniq().reduce(function(nodelist, city) {
+                var node = $('<option></option>').attr('value', city).html(city);
+                return nodelist.concat(node);
+            }, [$('<option selected disabled></option>').html('所在城市')], this).value();
+            $('select[name=city]').html($cityOptions).on('change', function() {
+                var citySelected = $(this).val();
+                var $storeOptions = _.chain(CITY_STORE).filter(function(item) {
+                    return item[0] == citySelected;
+                }).map(_.iteratee(1)).reduce(function(nodelist, store) {
+                    var node = $('<option></option>').attr('value', store).html(store);
+                    return nodelist.concat(node);
+                }, [$('<option selected disabled></option>').html('是该商场会员')], this).value();
+                $('select[name=store]').html($storeOptions);
+            });
+        })();
+    </script>
+    
+</body>
+</html>

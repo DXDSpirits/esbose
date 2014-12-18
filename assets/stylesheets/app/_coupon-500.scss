@@ -1,0 +1,36 @@
+#view-coupon-500 {
+    background: url("../images/coupon-500-bg.jpg") no-repeat top;
+    background-size: 100% auto;
+    padding: 105% 25px 25px;
+    form {
+        background-color: #fff;
+        //padding-top: 20px;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .form-control, .btn {
+        border-radius: 0;
+    }
+    .btn {
+        background-color: #e61939;
+        color: #fff;
+    }
+    .form-group {
+        margin: 20px 15px;
+    }
+    input {
+        padding-left: 32px;
+        background-image: url("../images/coupon-500-input-icons.png");
+        background-repeat: no-repeat;
+        background-size: 32px 64px;
+        &[name="mobile"] {
+            background-position: 0 0;
+        }
+        &[name="name"] {
+            background-position: 0 -32px;
+        }
+    }
+    select {
+        width: 50%;
+    }
+}

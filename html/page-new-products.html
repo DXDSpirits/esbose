@@ -4,7 +4,6 @@
     include "includes/metadata.html"
     <title>最新推荐</title>
     include "includes/stylesheets.html"
-    <script src="assets/javascripts/vendor/modernizr-2.7.1.min.js"></script>
 </head>
 <body>
     
@@ -31,7 +30,16 @@
     
     include "includes/javascripts.html"
     <script src="assets/javascripts/plugins/iscroll.js"></script>
-    <script src="assets/javascripts/app.js"></script>
+    <script>
+        (function() {
+            $('#view-page-new-products .scroll, #view-page-new-products .scroll-item').css({
+                height: $(window).height()
+            });
+            var scrollNP = new IScroll('#view-page-new-products .scroll', {
+                snap: true
+            });
+        })();
+    </script>
     
 </body>
 </html>
