@@ -62,5 +62,19 @@
 
     <script src="assets/javascripts/amour.js"></script>
     
+    <script>
+        $('form').on('submit', function(e) {
+            e.preventDefault();
+            var url = 'http://101.231.95.196/BoseWechat.Web/Api/CouponCampaign/Icbc500';
+            var data = {};
+            _.each($('form').serializeArray(), function(item) {
+                data[item.name] = item.value;
+            });
+            $.post(url, data, function() {
+                alert('提交成功');
+            });
+        });
+    </script>
+    
 </body>
 </html>

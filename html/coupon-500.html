@@ -47,6 +47,17 @@
                 }, [$('<option selected disabled></option>').html('是该商场会员')], this).value();
                 $('select[name=store]').html($storeOptions);
             });
+            $('form').on('submit', function(e) {
+                e.preventDefault();
+                var url = 'http://101.231.95.196/BoseWechat.Web/Api/CouponCampaign/Mall500';
+                var data = {};
+                _.each($('form').serializeArray(), function(item) {
+                    data[item.name] = item.value;
+                });
+                $.post(url, data, function() {
+                    alert('提交成功');
+                });
+            });
         })();
     </script>
     
