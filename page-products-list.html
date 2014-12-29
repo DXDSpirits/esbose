@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+
+        <meta name="description" content="">
+        <meta name="HandheldFriendly" content="True">
+        <meta name="MobileOptimized" content="320">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, minimal-ui">
+        <meta http-equiv="cleartype" content="on">
+        <meta name="CDNURL" content="assets/">
+        <meta name="APIHost" content="http://101.231.95.196">
+
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/touch/apple-touch-icon-144x144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/touch/apple-touch-icon-114x114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/touch/apple-touch-icon-72x72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/images/touch/apple-touch-icon-57x57-precomposed.png">
+        <link rel="shortcut icon" sizes="196x196" href="assets/images/touch/touch-icon-196x196.png">
+        <link rel="shortcut icon" href="assets/images/touch/apple-touch-icon.png">
+
+        <!-- Tile icon for Win8 (144x144 + tile color) -->
+        <meta name="msapplication-TileImage" content="assets/images/touch/apple-touch-icon-144x144-precomposed.png">
+        <meta name="msapplication-TileColor" content="#222222">
+
+        <!-- Add to homescreen for Chrome on Android -->
+        <meta name="mobile-web-app-capable" content="yes">
+
+        <!-- For iOS web apps. Delete if not needed. https://github.com/h5bp/mobile-boilerplate/issues/94 -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="apple-mobile-web-app-title" content="">
+        <title>最新推荐</title>
+        <link rel="stylesheet" href="assets/stylesheets/bootstrap.css">
+        <link rel="stylesheet" href="assets/stylesheets/font-awesome.css">
+        <link rel="stylesheet" href="assets/stylesheets/amour.css">
+        <link rel="stylesheet" href="assets/stylesheets/app.css">
+        <script src="assets/javascripts/vendor/modernizr-2.7.1.min.js"></script>
+        
+        <style>
+            .product-name {
+                border-top: 1px solid #eee;
+                padding-top: 1em;
+                margin-top: 1em;
+            }
+            .product-name a {
+                text-decoration: underline;
+            }
+            .category-name {
+                margin-top: 2em;
+            }
+        </style>
+        
+    </head>
+    <body>
+        
+        <div id="apploader" class="invisible">
+            <div class="loader">
+                <div class="loading-sprite"></div>
+                <p class="ajax-error hidden">网络不给力啊，请稍后再试！</p>
+            </div>
+        </div>
+
+        <div class="view" id="view-page-products-list"></div>
+
+        <script src="assets/javascripts/vendor/jquery-1.10.2.min.js"></script>
+        <script src="assets/javascripts/vendor/underscore.min.js"></script>
+        <script src="assets/javascripts/vendor/mustache.min.js"></script>
+        <script src="assets/javascripts/vendor/backbone.min.js"></script>
+        <script src="assets/javascripts/vendor/bootstrap.min.js"></script>
+
+        <script src="assets/javascripts/plugins/fastclick.js"></script>
+        <script src="assets/javascripts/plugins/moment.js"></script>
+        <script src="assets/javascripts/plugins/moment.zh-cn.js"></script>
+
+        <script src="assets/javascripts/amour.js"></script>
+        
+        <script>
+            var TEST_DATA = [{
+                "ID" : 0,
+                "Name" : "类别1",
+                "ProductsSummary" : [{
+                    "ID" : 4,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }, {
+                    "ID" : 5,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }]
+            }, {
+                "ID" : 0,
+                "Name" : "类别2",
+                "ProductsSummary" : [{
+                    "ID" : 4,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }, {
+                    "ID" : 5,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }]
+            }, {
+                "ID" : 0,
+                "Name" : "类别3",
+                "ProductsSummary" : [{
+                    "ID" : 4,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }, {
+                    "ID" : 5,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }]
+            }, {
+                "ID" : 0,
+                "Name" : "类别4",
+                "ProductsSummary" : [{
+                    "ID" : 4,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }, {
+                    "ID" : 5,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }]
+            }, {
+                "ID" : 0,
+                "Name" : "类别5",
+                "ProductsSummary" : [{
+                    "ID" : 4,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }, {
+                    "ID" : 5,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }]
+            }];
+        </script>
+        
+        <script id="template-product-item" type="text/x-mustache-template">
+            <div class="container">
+                <h4 class="category-name">{{Name}}</h4>
+                {{#ProductsSummary}}
+                <h4 class="product-name"><a href="page-product-detail.html#{{ID}}">{{Name}}</a></h4>
+                <div class="row">
+                    <div class="col-xs-7">{{Summary}}</div>
+                    <div class="col-xs-5">
+                        <div class="img" data-bg-src="{{ImageUrl}}" style="padding-top: 100%;"></div>
+                    </div>
+                </div>
+                {{/ProductsSummary}}
+            </div>
+        </script>
+        
+        <script>
+            (function() {
+                var template = $('#template-product-item').html();
+                var productList = new Amour.Collection();
+                var productView = new (Amour.CollectionView.extend({
+                    ModelView: Amour.ModelView.extend({
+                        template: template
+                    }),
+                    collection: productList
+                }))({
+                    el: $('#view-page-products-list')
+                });
+                //productList.reset(TEST_DATA);
+                //return;
+                
+                var hash = window.location.hash;
+                var parentID = +hash.slice(1);
+                var url = Amour.APIHost + '/BoseWechat.Web/Api/ProductCenter/GetCategoryBasicWithProductsSummaryByParentID';
+                $.get(url, {
+                    parentID: parentID,
+                }, function(data) {
+                    if (+data.Code == 0) {
+                        productList.reset(data.Result);
+                    }
+                });
+            })();
+        </script>
+        
+    </body>
+</html>

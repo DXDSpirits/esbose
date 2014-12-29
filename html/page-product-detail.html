@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        include "includes/metadata.html"
+        <title>最新推荐</title>
+        include "includes/stylesheets.html"
+        
+        <style>
+            .content {
+                padding-top: 30px;
+            }
+            .link {
+                
+            }
+            footer {
+                height: 50px;
+                padding: 15px;
+                overflow: hidden;
+            }
+        </style>
+        
+    </head>
+    <body>
+        
+        include "includes/apploader.html"
+        <div class="view" id="view-page-product-detail"></div>
+
+        include "includes/javascripts.html"
+        
+        <script id="template-product-detail" type="text/x-mustache-template">
+            <div class="container content" style="min-height: {{minHeight}}px">
+                {{{Content}}}
+            </div>
+            <footer>
+                <p class="text-center">更多精彩，<a href="{{SafeLinkUrl}}">请点击</a></p>
+            </footer>
+        </script>
+        
+        <script>
+            (function() {
+                var template = $('#template-product-detail').html();
+                var product = new Amour.Model();
+                var productView = new (Amour.ModelView.extend({
+                    templateHelpers: function() {
+                        var LinkUrl = this.model.get('LinkUrl');
+                        return {
+                            minHeight: $(window).height() - 50,
+                            SafeLinkUrl: /^http:\/\//.test(LinkUrl) ? LinkUrl : 'http://' + LinkUrl
+                        };
+                    },
+                    template: template,
+                    model: product
+                }))({
+                    el: $('#view-page-product-detail')
+                });
+                
+                var hash = window.location.hash;
+                var productID = +hash.slice(1);
+                var url = Amour.APIHost + '/BoseWechat.Web/Api/ProductCenter/GetProductContentByID';
+                $.get(url, {
+                    id: productID,
+                }, function(data) {
+                    if (+data.Code == 0) {
+                        product.set(data.Result);
+                    }
+                });
+            })();
+        </script>
+        
+    </body>
+</html>

@@ -18,34 +18,6 @@
         onBridgeReady();
     }
     
-    
-    /*
-     * Ajax events
-     */
-    
-    var timeout = 1000;
-    var timeout_stop, timeout_error;
-    
-    Amour.ajax.on('start', function() {
-        clearTimeout(timeout_stop);
-        clearTimeout(timeout_error);
-        $('#apploader').removeClass('invisible');
-    });
-    
-    Amour.ajax.on('stop', function() {
-        timeout_stop = setTimeout(function () {
-            $('#apploader').addClass('invisible');
-            timeout = 1000;
-        }, timeout);
-    });
-    
-    Amour.ajax.on('error', function() {
-        $('#apploader .ajax-error').removeClass('hidden');
-        timeout_error = setTimeout(function () {
-            $('#apploader .ajax-error').addClass('hidden');
-        }, (timeout = 2500));
-    });
-    
     /*
      * Pages
      */
@@ -189,7 +161,7 @@
             reader.onloadend = function() {
                 console.log(reader.result);
                 self.productData[name] = reader.result;
-            }
+            };
             reader.readAsDataURL(file);
         },
         uploadReceipt: function(e) {

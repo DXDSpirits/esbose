@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        include "includes/metadata.html"
+        <title>最新推荐</title>
+        include "includes/stylesheets.html"
+        
+        <style>
+            .product-name {
+                border-top: 1px solid #eee;
+                padding-top: 1em;
+                margin-top: 1em;
+            }
+            .product-name a {
+                text-decoration: underline;
+            }
+            .category-name {
+                margin-top: 2em;
+            }
+        </style>
+        
+    </head>
+    <body>
+        
+        include "includes/apploader.html"
+        <div class="view" id="view-page-products-list"></div>
+
+        include "includes/javascripts.html"
+        
+        <script>
+            var TEST_DATA = [{
+                "ID" : 0,
+                "Name" : "类别1",
+                "ProductsSummary" : [{
+                    "ID" : 4,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }, {
+                    "ID" : 5,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }]
+            }, {
+                "ID" : 0,
+                "Name" : "类别2",
+                "ProductsSummary" : [{
+                    "ID" : 4,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }, {
+                    "ID" : 5,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }]
+            }, {
+                "ID" : 0,
+                "Name" : "类别3",
+                "ProductsSummary" : [{
+                    "ID" : 4,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }, {
+                    "ID" : 5,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }]
+            }, {
+                "ID" : 0,
+                "Name" : "类别4",
+                "ProductsSummary" : [{
+                    "ID" : 4,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }, {
+                    "ID" : 5,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }]
+            }, {
+                "ID" : 0,
+                "Name" : "类别5",
+                "ProductsSummary" : [{
+                    "ID" : 4,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }, {
+                    "ID" : 5,
+                    "Name" : "产品1",
+                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
+                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
+                }]
+            }];
+        </script>
+        
+        <script id="template-product-item" type="text/x-mustache-template">
+            <div class="container">
+                <h4 class="category-name">{{Name}}</h4>
+                {{#ProductsSummary}}
+                <h4 class="product-name"><a href="page-product-detail.html#{{ID}}">{{Name}}</a></h4>
+                <div class="row">
+                    <div class="col-xs-7">{{Summary}}</div>
+                    <div class="col-xs-5">
+                        <div class="img" data-bg-src="{{ImageUrl}}" style="padding-top: 100%;"></div>
+                    </div>
+                </div>
+                {{/ProductsSummary}}
+            </div>
+        </script>
+        
+        <script>
+            (function() {
+                var template = $('#template-product-item').html();
+                var productList = new Amour.Collection();
+                var productView = new (Amour.CollectionView.extend({
+                    ModelView: Amour.ModelView.extend({
+                        template: template
+                    }),
+                    collection: productList
+                }))({
+                    el: $('#view-page-products-list')
+                });
+                //productList.reset(TEST_DATA);
+                //return;
+                
+                var hash = window.location.hash;
+                var parentID = +hash.slice(1);
+                var url = Amour.APIHost + '/BoseWechat.Web/Api/ProductCenter/GetCategoryBasicWithProductsSummaryByParentID';
+                $.get(url, {
+                    parentID: parentID,
+                }, function(data) {
+                    if (+data.Code == 0) {
+                        productList.reset(data.Result);
+                    }
+                });
+            })();
+        </script>
+        
+    </body>
+</html>

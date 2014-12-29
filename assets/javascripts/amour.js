@@ -396,15 +396,25 @@
         $(document).ajaxStop(function () {
             Amour.ajax.trigger('stop');
         });
-        /*$(document).ajaxError(function (event, jqxhr, settings, exception) {
-            var response = jqxhr.responseJSON || {};
-            if (jqxhr.status == 401 || jqxhr.status == 403 || jqxhr.status == 499) {
-                Amour.TokenAuth.clear();
-                Amour.ajax.trigger('unauthorized');
-            } else if (settings.type == 'GET' && jqxhr.statusText != 'abort') {
-                Amour.ajax.trigger('error');
-            }
-        });*/
+        var timeout = 1000;
+        var timeout_stop, timeout_error;
+        Amour.ajax.on('start', function() {
+            clearTimeout(timeout_stop);
+            clearTimeout(timeout_error);
+            $('#apploader').removeClass('invisible');
+        });
+        Amour.ajax.on('stop', function() {
+            timeout_stop = setTimeout(function () {
+                $('#apploader').addClass('invisible');
+                timeout = 1000;
+            }, timeout);
+        });
+        Amour.ajax.on('error', function() {
+            $('#apploader .ajax-error').removeClass('hidden');
+            timeout_error = setTimeout(function () {
+                $('#apploader .ajax-error').addClass('hidden');
+            }, (timeout = 2500));
+        });
     };
     
     var fillImages = function() {

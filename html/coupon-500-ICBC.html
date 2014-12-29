@@ -7,6 +7,7 @@
 </head>
 <body>
     
+    include "includes/apploader.html"
     <div class="view" id="view-coupon-500">
         <form>
             <div class="form-group mobile">
@@ -25,8 +26,7 @@
         (function() {
             $('form').on('submit', function(e) {
                 e.preventDefault();
-                //var url = 'http://101.231.95.196/BoseWechat.Web/Api/CouponCampaign/Icbc500';
-                var url = 'http://210.73.204.248/BoseWechat.Web/Api/CouponCampaign/Icbc500';
+                var url = Amour.APIHost + '/BoseWechat.Web/Api/CouponCampaign/Icbc500';
                 var data = {};
                 _.each($('form').serializeArray(), function(item) {
                     data[item.name] = item.value;
