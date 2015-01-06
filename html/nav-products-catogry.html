@@ -22,7 +22,7 @@
     
     <script id="template-category-item" type="text/x-mustache-template">
         <div class="background img" data-bg-src="{{ImageUrl}}"></div>
-        <div class="category-name">{{name}}</div>
+        <div class="category-name">{{Name}}</div>
     </script>
 
     <script>
@@ -36,6 +36,12 @@
                     },
                     className: 'catogry-item img pull-left',
                     template: template,
+                    serializeData: function() {
+                        var data = Amour.ModelView.prototype.serializeData.call(this);
+                        var ImageUrl = data.ImageUrl;
+                        data.ImageUrl = /^http:\/\//.test(ImageUrl) ? ImageUrl : Amour.APIHost + '/BoseWechat.Web/' + ImageUrl;
+                        return data;
+                    },
                     goToProductList: function() {
                         location.href = 'page-products-list.html#' + this.model.get('ID');
                     }

@@ -167,7 +167,10 @@
   bottom: 0;
   padding: 5px;
   left: 0;
-  width: 100%; }
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background-color: #555; }
 
 #view-nav-brand > .background {
   background-size: contain;
