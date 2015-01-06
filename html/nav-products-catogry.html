@@ -20,5 +20,38 @@
     
     include "includes/javascripts.html"
     
+    <script id="template-category-item" type="text/x-mustache-template">
+        <div class="background img" data-bg-src="{{ImageUrl}}"></div>
+        <div class="category-name">{{name}}</div>
+    </script>
+
+    <script>
+        (function() {
+            var template = $('#template-category-item').html();
+            var categoryList = new Amour.Collection();
+            var categoryView = new (Amour.CollectionView.extend({
+                ModelView: Amour.ModelView.extend({
+                    events: {
+                        'click': 'goToProductList'
+                    },
+                    className: 'catogry-item img pull-left',
+                    template: template,
+                    goToProductList: function() {
+                        location.href = 'page-products-list.html#' + this.model.get('ID');
+                    }
+                }),
+                collection: categoryList
+            }))({
+                el: $('#view-nav-products-catogry .catogry-cube')
+            });
+            var url = Amour.APIHost + '/BoseWechat.Web/Api/ProductCenter/GetRootCategories';
+            $.get(url, {}, function(data) {
+                if (+data.Code == 0) {
+                    categoryList.reset(data.Result);
+                }
+            });
+        })();
+    </script>
+    
 </body>
 </html>

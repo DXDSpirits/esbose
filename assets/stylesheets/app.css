@@ -153,14 +153,21 @@
   width: 100%;
   padding-top: 54.53125%; }
 #view-nav-products-catogry .catogry-item {
-  display: block;
   width: 44%;
   margin: 4%;
-  padding-top: 41.526%; }
+  padding-top: 41.526%;
+  cursor: pointer;
+  position: relative; }
   #view-nav-products-catogry .catogry-item:nth-child(n+3) {
     margin-top: 0; }
   #view-nav-products-catogry .catogry-item:nth-child(2n) {
     margin-left: 0; }
+#view-nav-products-catogry .category-name {
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+  left: 0;
+  width: 100%; }
 
 #view-nav-brand > .background {
   background-size: contain;
