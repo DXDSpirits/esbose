@@ -172,6 +172,20 @@
   color: #fff;
   background-color: #555; }
 
+#view-nav-cars {
+  background-color: #aaa;
+  color: #000; }
+  #view-nav-cars article {
+    padding: 10px 30px; }
+  #view-nav-cars .carousel-inner .img {
+    padding-top: 100%; }
+  #view-nav-cars .video-wrapper {
+    margin: 20px; }
+    #view-nav-cars .video-wrapper > .img {
+      padding-top: 45%; }
+  #view-nav-cars video {
+    display: none; }
+
 #view-nav-jobs .subtitle {
   padding: 5px 15px;
   background-color: #91c3ef;

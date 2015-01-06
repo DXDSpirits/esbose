@@ -1,3 +1,21 @@
 #view-nav-cars {
-
+	background-color: #aaa;
+	color: #000;
+	article {
+		padding: 10px 30px;
+	}
+	.carousel-inner {
+		.img {
+			padding-top: 100%;
+		}
+	}
+	.video-wrapper {
+		margin: 20px;
+		> .img {
+			padding-top: 45%;
+		}
+	}
+	video {
+		display: none;
+	}
 }

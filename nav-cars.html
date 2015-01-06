@@ -36,13 +36,51 @@
 </head>
 <body>
     
-    <div class="view" id="view-nav-cars">
-        <div class="background img" data-bg-src="images/nav-products-bg.jpg"></div>
-        <div class="buttons-stack clearfix">
-            <a class="nav-btn" href="nav-products-category.html">产品系列</a>
-            <a class="nav-btn" href="page-new-products.html">最新推荐</a>
-            <a class="nav-btn disable" href="#">柜台查询</a>
+    <div id="apploader" class="invisible">
+        <div class="loader">
+            <div class="loading-sprite"></div>
+            <p class="ajax-error hidden">网络不给力啊，请稍后再试！</p>
         </div>
+    </div>
+
+    <div class="view" id="view-nav-cars">
+        <div id="carousel-cars" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-cars" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-cars" data-slide-to="1"></li>
+                <li data-target="#carousel-cars" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="img" data-bg-src="images/cars-slide-1.jpg"></div>
+                </div>
+                <div class="item">
+                    <div class="img" data-bg-src="images/cars-slide-2.jpg"></div>
+                </div>
+                <div class="item">
+                    <div class="img" data-bg-src="images/cars-slide-3.jpg"></div>
+                </div>
+            </div><!-- Controls -->
+            <a class="left carousel-control" href="#carousel-cars" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-cars" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+        <div class="video-wrapper">
+            <div class="img" data-bg-src="images/cars-video-placeholder.jpg"></div>
+            <p class="text-right">(建议在WiFi环境下观看)</p>
+            <video src="assets/images/The-Bose-Difference.mp4"></video>
+        </div>
+        <article>
+            <h4 class="text-center">BOSE汽车音响</h4>
+            <p>BOSE公司是最早开创原厂定制车载音响的制造商，30多年来坚持为每一款车型特别设计高级音响系统并进行精准地调音，使汽车从一个原本不适合听音乐的环境转变为移动的音乐厅。凭借精益求精的研究与调音技术，如今，BOSE已成为全世界最受青睐的高级汽车音响品牌之一，奥迪、凯迪拉克、英菲尼迪、保时捷等豪华品牌都与BOSE合作原厂定制高级汽车音响系统。</p>
+            <p>选择带有Bose汽车音响系统的座驾,让旅途不仅是路途<p>
+        </article>
+        <footer class="container">
+            <div class="row">
+        </footer>
     </div>
     
 
@@ -58,6 +96,26 @@
 
     <script src="assets/configs.js"></script>
     <script src="assets/javascripts/amour.js"></script>
+    <script src="assets/javascripts/CARS.js"></script>
     
+    <script>
+        (function() {
+            $('.video-wrapper').on('click', function() {
+                //var audio = new Audio('assets/images/The-Bose-Difference.mp4');
+                //audio.play();
+                //location.href = 'assets/images/The-Bose-Difference.mp4';
+                var video = $('video')[0];
+                video.play();
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.mozRequestFullScreen) {
+                    video.mozRequestFullScreen();
+                } else if (video.webkitRequestFullscreen) {
+                    video.webkitRequestFullscreen();
+                }
+            });
+        })();
+    </script>
+
 </body>
 </html>
