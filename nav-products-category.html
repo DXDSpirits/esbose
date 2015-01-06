@@ -36,6 +36,13 @@
 </head>
 <body>
     
+    <div id="apploader" class="invisible">
+        <div class="loader">
+            <div class="loading-sprite"></div>
+            <p class="ajax-error hidden">网络不给力啊，请稍后再试！</p>
+        </div>
+    </div>
+
     <div class="view" id="view-nav-products-category">
         <div class="background img" data-bg-src="images/nav-products-category-bg.jpg"></div>
         <div class="banner img" data-bg-src="images/nav-products-category-banner.jpg"></div>
@@ -86,9 +93,9 @@
                     goToProductList: function() {
                         location.href = 'page-products-list.html#' + this.model.get('ID');
                     }
-                }),
-                collection: categoryList
+                })
             }))({
+                collection: categoryList,
                 el: $('#view-nav-products-category .category-cube')
             });
             var url = Amour.APIHost + '/BoseWechat.Web/Api/ProductCenter/GetRootCategories';

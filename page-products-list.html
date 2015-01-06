@@ -170,9 +170,9 @@
                 var productView = new (Amour.CollectionView.extend({
                     ModelView: Amour.ModelView.extend({
                         template: template
-                    }),
-                    collection: productList
+                    })
                 }))({
+                    collection: productList,
                     el: $('#view-page-products-list')
                 });
                 //productList.reset(TEST_DATA);

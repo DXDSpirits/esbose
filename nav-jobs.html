@@ -36,13 +36,16 @@
 </head>
 <body>
     
-    <div class="view" id="view-nav-jobs">
-        <div class="background img" data-bg-src="images/nav-products-bg.jpg"></div>
-        <div class="buttons-stack clearfix">
-            <a class="nav-btn" href="nav-products-category.html">产品系列</a>
-            <a class="nav-btn" href="page-new-products.html">最新推荐</a>
-            <a class="nav-btn disable" href="#">柜台查询</a>
+    <div id="apploader" class="invisible">
+        <div class="loader">
+            <div class="loading-sprite"></div>
+            <p class="ajax-error hidden">网络不给力啊，请稍后再试！</p>
         </div>
+    </div>
+
+    <div class="view" id="view-nav-jobs">
+        <div class="hero img" data-bg-src="images/nav-jobs-bg.jpg"></div>
+        <div class="jobs-list hidden"></div>
     </div>
     
 
@@ -58,6 +61,55 @@
 
     <script src="assets/configs.js"></script>
     <script src="assets/javascripts/amour.js"></script>
-    
+    <script src="assets/javascripts/JOBS.js"></script>    
+
+    <script>
+        (function() {
+            $('#view-nav-jobs > .hero').css('height', $(window).height())
+                                       .on('click', function() {
+                                            $('.jobs-list').removeClass('hidden');
+                                            $('body').animate({
+                                                scrollTop: $(window).height()
+                                            }, 1000);
+                                       });
+
+            var PositionsView = Amour.CollectionView.extend({
+                ModelView: Amour.ModelView.extend({
+                    className: 'row position-item',
+                    template: '<div class="col-xs-7 name">{{{name}}}</div>' +
+                              '<div class="col-xs-4 loc">{{{location}}}</div>'+
+                              '<i class="fa fa-angle-right"></i>',
+                    events: {
+                        'click': 'goToDetail'
+                    },
+                    goToDetail: function() {
+                        location.href = 'page-job-detail.html#' + this.model.id;
+                    }
+                })
+            });
+            var categories = new Amour.Collection();
+            var categoriesView = new (Amour.CollectionView.extend({
+                ModelView: Amour.ModelView.extend({
+                    className: 'job-category',
+                    template: '<div class="subtitle">{{{category}}}</div><div class="container"></div>',
+                    render: function() {
+                        Amour.ModelView.prototype.render.call(this);
+                        this.positions = new Amour.Collection();
+                        this.positionsView = new PositionsView({
+                            collection: this.positions,
+                            el: this.$('>.container')
+                        });
+                        this.positions.reset(this.model.get('positions'))
+                        return this;
+                    }
+                })
+            }))({
+                collection: categories,
+                el: $('#view-nav-jobs .jobs-list')
+            });
+            categories.reset(JOBS);
+        })();
+    </script>
+
 </body>
 </html>

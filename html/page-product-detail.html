@@ -2,7 +2,7 @@
 <html class="no-js">
     <head>
         include "includes/metadata.html"
-        <title>最新推荐</title>
+        <title></title>
         include "includes/stylesheets.html"
         
         <style>
@@ -62,6 +62,7 @@
                 }, function(data) {
                     if (+data.Code == 0) {
                         product.set(data.Result);
+                        $('title').text(product.get('Name'));
                     }
                 });
             })();

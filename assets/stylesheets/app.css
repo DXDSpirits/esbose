@@ -172,6 +172,31 @@
   color: #fff;
   background-color: #555; }
 
+#view-nav-jobs .subtitle {
+  padding: 5px 15px;
+  background-color: #91c3ef;
+  color: #fff; }
+#view-nav-jobs .position-item {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #eee;
+  line-height: 1.5em;
+  height: 4em;
+  position: relative; }
+  #view-nav-jobs .position-item .name {
+    padding-right: 0; }
+  #view-nav-jobs .position-item .loc {
+    line-height: 3em;
+    text-align: right; }
+  #view-nav-jobs .position-item > .fa {
+    position: absolute;
+    right: 10px;
+    height: 40px;
+    line-height: 40px;
+    top: 50%;
+    margin-top: -20px;
+    font-size: 30px; }
+
 #view-nav-brand > .background {
   background-size: contain;
   background-position: top;

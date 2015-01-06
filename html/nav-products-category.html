@@ -7,6 +7,7 @@
 </head>
 <body>
     
+    include "includes/apploader.html"
     <div class="view" id="view-nav-products-category">
         <div class="background img" data-bg-src="images/nav-products-category-bg.jpg"></div>
         <div class="banner img" data-bg-src="images/nav-products-category-banner.jpg"></div>
@@ -45,9 +46,9 @@
                     goToProductList: function() {
                         location.href = 'page-products-list.html#' + this.model.get('ID');
                     }
-                }),
-                collection: categoryList
+                })
             }))({
+                collection: categoryList,
                 el: $('#view-nav-products-category .category-cube')
             });
             var url = Amour.APIHost + '/BoseWechat.Web/Api/ProductCenter/GetRootCategories';
