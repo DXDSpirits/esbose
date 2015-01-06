@@ -147,22 +147,22 @@
   font-size: 50px;
   color: rgba(255, 255, 255, 0.5); }
 
-#view-nav-products-catogry > .background {
+#view-nav-products-category > .background {
   background-size: 100% 100%; }
-#view-nav-products-catogry .banner {
+#view-nav-products-category .banner {
   width: 100%;
   padding-top: 54.53125%; }
-#view-nav-products-catogry .catogry-item {
+#view-nav-products-category .category-item {
   width: 44%;
   margin: 4%;
   padding-top: 41.526%;
   cursor: pointer;
   position: relative; }
-  #view-nav-products-catogry .catogry-item:nth-child(n+3) {
+  #view-nav-products-category .category-item:nth-child(n+3) {
     margin-top: 0; }
-  #view-nav-products-catogry .catogry-item:nth-child(2n) {
+  #view-nav-products-category .category-item:nth-child(2n) {
     margin-left: 0; }
-#view-nav-products-catogry .category-name {
+#view-nav-products-category .category-name {
   position: absolute;
   bottom: 0;
   padding: 5px;

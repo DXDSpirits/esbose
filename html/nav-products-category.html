@@ -7,14 +7,14 @@
 </head>
 <body>
     
-    <div class="view" id="view-nav-products-catogry">
-        <div class="background img" data-bg-src="images/nav-products-catogry-bg.jpg"></div>
-        <div class="banner img" data-bg-src="images/nav-products-catogry-banner.jpg"></div>
-        <div class="catogry-cube clearfix">
-            <a class="catogry-item img pull-left" data-bg-src="images/nav-products-catogry-1.jpg" href="page-products-list.html#1003"></a>
-            <a class="catogry-item img pull-left" data-bg-src="images/nav-products-catogry-2.jpg" href="page-products-list.html#1004"></a>
-            <a class="catogry-item img pull-left" data-bg-src="images/nav-products-catogry-3.jpg" href="page-products-list.html#1005"></a>
-            <a class="catogry-item img pull-left" data-bg-src="images/nav-products-catogry-4.jpg" href="page-products-list.html#1006"></a>
+    <div class="view" id="view-nav-products-category">
+        <div class="background img" data-bg-src="images/nav-products-category-bg.jpg"></div>
+        <div class="banner img" data-bg-src="images/nav-products-category-banner.jpg"></div>
+        <div class="category-cube clearfix">
+            <!--<a class="category-item img pull-left" data-bg-src="images/nav-products-category-1.jpg" href="page-products-list.html#1003"></a>
+            <a class="category-item img pull-left" data-bg-src="images/nav-products-category-2.jpg" href="page-products-list.html#1004"></a>
+            <a class="category-item img pull-left" data-bg-src="images/nav-products-category-3.jpg" href="page-products-list.html#1005"></a>
+            <a class="category-item img pull-left" data-bg-src="images/nav-products-category-4.jpg" href="page-products-list.html#1006"></a>-->
         </div>
     </div>
     
@@ -34,7 +34,7 @@
                     events: {
                         'click': 'goToProductList'
                     },
-                    className: 'catogry-item img pull-left',
+                    className: 'category-item img pull-left',
                     template: template,
                     serializeData: function() {
                         var data = Amour.ModelView.prototype.serializeData.call(this);
@@ -48,7 +48,7 @@
                 }),
                 collection: categoryList
             }))({
-                el: $('#view-nav-products-catogry .catogry-cube')
+                el: $('#view-nav-products-category .category-cube')
             });
             var url = Amour.APIHost + '/BoseWechat.Web/Api/ProductCenter/GetRootCategories';
             $.get(url, {}, function(data) {
