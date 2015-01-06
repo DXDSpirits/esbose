@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        include "includes/metadata.html"
+        <title></title>
+        include "includes/stylesheets.html"
+    </head>
+    <body>
+        
+        include "includes/apploader.html"
+        <div class="view" id="view-page-job-detail">
+            <div class="wechat-share-tip background img hidden" data-bg-src="images/wechat-share-tip.png"></div>
+            <div class="content"></div>
+            <footer class="container">
+                <div class="row">
+                    <div class="col-xs-4 split">
+                        <button type="button" class="btn btn-block btn-return">返回</button>
+                    </div>
+                    <div class="col-xs-8">
+                        <button type="button" class="btn btn-block btn-share">推荐职位给好友</button>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        include "sections/job-detail-templates.html"
+
+        include "includes/javascripts.html"
+        <script src="assets/javascripts/JOBS.js"></script>    
+        
+        <script id="template-job-detail" type="text/x-mustache-template">
+            <div class="title">职位：{{name}}</div>
+            <div class="title">职务范畴：</div>
+            <div class="description">{{{description}}}</div>
+        </script>
+        
+        <script>
+            (function() {
+                $('#view-page-job-detail .content').css('min-height', $(window).height() - 50);
+                $('#view-page-job-detail .btn-return').on('click', function() {
+                    location.href = 'nav-jobs.html';
+                });
+                $('#view-page-job-detail .btn-share').on('click', function() {
+                    var $tip = $('#view-page-job-detail .wechat-share-tip');
+                    $tip.removeClass('hidden');
+                    var removeTip = _.once(function() {
+                        $tip.addClass('hidden');
+                    });
+                    $tip.on('click', removeTip);
+                    _.delay(removeTip, 3000);
+                });
+                var template = $('#template-job-detail').html();
+                var job = new Amour.Model();
+                var jobView = new (Amour.ModelView.extend({
+                    template: template,
+                }))({
+                    model: job,
+                    el: $('#view-page-job-detail .content')
+                });
+                
+                var hash = window.location.hash;
+                var jobID = +hash.slice(1);
+                var position = JOB_POSITIONS[jobID];
+                console.log(position.nameEN.split(' ').join('-'))
+                var description = $('#template-job-description-' + position.nameEN.split(' ').join('-')).text();
+                var lines = description.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
+                var descHTML = '';
+                for (var i=0; i<lines.length; i++) {
+                    var line = lines[i].trim();
+                    if (line[0] == '*') {
+                        descHTML += '<p><strong>' + line.slice(1).trim() + '</strong></p>';
+                    } else {
+                        descHTML += '<p>' + line + '</p>';
+                    }
+                }
+                
+                data = {
+                    'name': position.name,
+                    'description': descHTML
+                };
+                job.set(data);
+                
+                /*var url = Amour.APIHost + '/BoseWechat.Web/Api/ProductCenter/GetProductContentByID';
+                $.get(url, {
+                    id: productID,
+                }, function(data) {
+                    if (+data.Code == 0) {
+                        product.set(data.Result);
+                    }
+                });*/
+            })();
+        </script>
+        
+    </body>
+</html>

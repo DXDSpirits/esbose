@@ -76,8 +76,8 @@
             var PositionsView = Amour.CollectionView.extend({
                 ModelView: Amour.ModelView.extend({
                     className: 'row position-item',
-                    template: '<div class="col-xs-7 name">{{{name}}}</div>' +
-                              '<div class="col-xs-4 loc">{{{location}}}</div>'+
+                    template: '<div class="col-xs-7 name">{{nameEN}}<br>{{name}}</div>' +
+                              '<div class="loc">{{location}}</div>'+
                               '<i class="fa fa-angle-right"></i>',
                     events: {
                         'click': 'goToDetail'

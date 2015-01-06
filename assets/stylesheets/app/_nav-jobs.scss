@@ -12,23 +12,54 @@
 		padding-bottom: 0.5em;
 		border-bottom: 1px solid #eee;
 		line-height: 1.5em;
-		height: 4em;
+		min-height: 4em;
 		position: relative;
 		.name {
 			padding-right: 0;
 		}
-		.loc {
-			line-height: 3em;
-			text-align:  right;
-		}
-		> .fa {
+		.loc, .fa {
 			position: absolute;
-			right: 10px;
+			top: 50%;
 			height: 40px;
 			line-height: 40px;
-			top: 50%;
 			margin-top: -20px;
+		}
+		.loc {
+			right: 40px;
+		}
+		.fa {
+			right: 10px;
 			font-size: 30px;
 		}
 	}
+}
+
+#view-page-job-detail {
+    > footer {
+        .btn {
+            background-color: transparent;
+            line-height: 50px - 1px;
+            padding: 0;
+            border: 0;
+        }
+        .split {
+        	border-right: 1px solid #ddd;
+        }
+        border-top: 1px solid #ddd;
+    }
+    .wechat-share-tip {
+    	z-index: 1;
+    	background-color: rgba(#000, 0.7);
+    	background-position: top;
+    	background-size: 100% auto;
+    }
+    .content {
+    	.title {
+    		padding: 10px 15px;
+    		border-bottom: 1px solid #ddd;
+    	}
+    	.description {
+    		padding: 15px;
+    	}
+    }
 }

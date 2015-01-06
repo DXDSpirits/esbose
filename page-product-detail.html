@@ -95,9 +95,9 @@
                             SafeLinkUrl: /^http:\/\//.test(LinkUrl) ? LinkUrl : 'http://' + LinkUrl
                         };
                     },
-                    template: template,
-                    model: product
+                    template: template
                 }))({
+                    model: product,
                     el: $('#view-page-product-detail')
                 });
                 
