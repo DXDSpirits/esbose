@@ -35,8 +35,8 @@
     
     var Amour = {
         version: '1.0',
-        APIHost: $('meta[name="APIHost"]').attr('content'),
-        CDNURL: $('meta[name="CDNURL"]').attr('content')
+        APIHost: BOSE_CONFIGS.APIHost,
+        CDNURL: BOSE_CONFIGS.CDNURL
     };
     
     /*
