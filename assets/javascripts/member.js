@@ -1,6 +1,6 @@
 (function() {
     
-    var match = window.location.search.match(/[\?\&]openid=(\w+)(&|$)/);
+    var match = window.location.search.match(/[\?\&]openid=(.+)(&|$)/);
     var openId = match ? match[1] : '';
     
     $('#view-member-bg').css({
