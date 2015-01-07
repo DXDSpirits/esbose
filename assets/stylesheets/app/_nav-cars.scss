@@ -96,3 +96,25 @@
 		}
 	}
 }
+
+#view-page-car-detail {
+	.cars_img {
+		img {
+			width: 100%;
+		}
+	}
+	.cars_name, .cars_content {
+		margin: 20px;
+	}
+	.cars_name {
+		padding: 10px 0;
+		border-bottom: 1px solid #aaa;
+	}
+	.cars_name_name {
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+	a[href="javascript:history.go(-1);"] {
+		display: none;
+	}
+}

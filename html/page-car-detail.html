@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        include "includes/metadata.html"
+        <title></title>
+        include "includes/stylesheets.html"
+    </head>
+    <body>
+        
+        include "includes/apploader.html"
+        <div class="view" id="view-page-car-detail"></div>
+
+        include "includes/javascripts.html"
+        <script src="assets/javascripts/CARS.js"></script>
+        
+        <script>
+            (function() {
+                var car = new Amour.Model();
+                var carView = new (Amour.ModelView.extend({
+                    template: '{{{content}}}'
+                }))({
+                    model: car,
+                    el: $('#view-page-car-detail')
+                });
+                
+                var hash = window.location.hash;
+                var serieID = +hash.slice(1);
+                var serie = CARS_SERIES[serieID];
+                console.log(serie);
+                $('title').text(serie.name);
+                car.set(serie);
+                /*var url = Amour.APIHost + '/BoseWechat.Web/Api/ProductCenter/GetProductContentByID';
+                $.get(url, {
+                    id: serieID,
+                }, function(data) {
+                    if (+data.Code == 0) {
+                        product.set(data.Result);
+                        $('title').text(product.get('Name'));
+                    }
+                });*/
+            })();
+        </script>
+        
+    </body>
+</html>

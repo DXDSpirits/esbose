@@ -250,6 +250,19 @@
       border: 1px solid #555;
       border-radius: 5px; }
 
+#view-page-car-detail .cars_img img {
+  width: 100%; }
+#view-page-car-detail .cars_name, #view-page-car-detail .cars_content {
+  margin: 20px; }
+#view-page-car-detail .cars_name {
+  padding: 10px 0;
+  border-bottom: 1px solid #aaa; }
+#view-page-car-detail .cars_name_name {
+  font-size: 1.5em;
+  font-weight: bold; }
+#view-page-car-detail a[href="javascript:history.go(-1);"] {
+  display: none; }
+
 #view-nav-jobs .subtitle {
   padding: 5px 15px;
   background-color: #91c3ef;
