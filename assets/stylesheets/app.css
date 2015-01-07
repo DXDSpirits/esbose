@@ -176,7 +176,7 @@
   background-color: #aaa;
   color: #000; }
   #view-nav-cars article {
-    padding: 10px 30px; }
+    padding: 10px 30px 50px; }
   #view-nav-cars .scroll {
     width: 100%;
     overflow: hidden; }
@@ -197,6 +197,36 @@
     height: 10px;
     border-radius: 5px;
     background: #777; }
+  #view-nav-cars footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #bbb; }
+    #view-nav-cars footer .text {
+      width: 40%;
+      padding: 1em; }
+    #view-nav-cars footer .menu {
+      width: 60%;
+      padding: 1em;
+      border: 1px solid #ccc;
+      position: relative;
+      z-index: 1; }
+    #view-nav-cars footer .menu-content {
+      position: absolute;
+      z-index: 0;
+      bottom: 100%;
+      right: 0;
+      width: 60%;
+      background-color: #bbb;
+      border-left: 1px solid #ccc;
+      border-top: 1px solid #ccc;
+      margin-bottom: -1px; }
+    #view-nav-cars footer .brand-item {
+      width: 50%;
+      padding: 10px;
+      border-right: 1px solid #ccc;
+      border-bottom: 1px solid #ccc; }
 
 #view-nav-jobs .subtitle {
   padding: 5px 15px;

@@ -29,8 +29,10 @@
             <p>BOSE公司是最早开创原厂定制车载音响的制造商，30多年来坚持为每一款车型特别设计高级音响系统并进行精准地调音，使汽车从一个原本不适合听音乐的环境转变为移动的音乐厅。凭借精益求精的研究与调音技术，如今，BOSE已成为全世界最受青睐的高级汽车音响品牌之一，奥迪、凯迪拉克、英菲尼迪、保时捷等豪华品牌都与BOSE合作原厂定制高级汽车音响系统。</p>
             <p>选择带有Bose汽车音响系统的座驾,让旅途不仅是路途<p>
         </article>
-        <footer class="container">
-            <div class="row">
+        <footer class="clearfix">
+            <div class="pull-left text-center text">汽车品牌</div>
+            <div class="pull-left text-center menu">点击查看　　　<i class="fa fa-chevron-up"></i></div>
+            <div class="menu-content clearfix hidden"></div>
         </footer>
     </div>
     
@@ -70,6 +72,29 @@
                     video.webkitRequestFullscreen();
                 }*/
             });
+            var toggleMenu = function() {
+                $('.menu-content').toggleClass('hidden');
+                $('.menu .fa').toggleClass('fa-rotate-180', !$('.menu-content').hasClass('hidden'));
+            };
+            $('.menu').on('click', toggleMenu);
+            var brands = new Amour.Collection();
+            var brandsView = new (Amour.CollectionView.extend({
+                ModelView: Amour.ModelView.extend({
+                    events: {
+                        'click': 'goToBrand'
+                    },
+                    className: 'brand-item pull-left text-center',
+                    template: '{{name}}',
+                    goToBrand: function() {
+                        toggleMenu();
+                        console.log(this.model.toJSON());
+                    }
+                })
+            }))({
+                collection: brands,
+                el: $('#view-nav-cars .menu-content')
+            });
+            brands.reset(CARS);
         })();
     </script>
 
