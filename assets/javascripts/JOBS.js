@@ -35,7 +35,7 @@
 	window.JOB_POSITIONS = {};
 	_.each(JOBS, function(category) {
 		_.each(category.positions, function(position) {
-			JOB_POSITIONS[position.id] = position
+			JOB_POSITIONS[position.id] = position;
 		});
-	})
+	});
 })();
