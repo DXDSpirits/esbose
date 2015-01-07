@@ -228,6 +228,28 @@
       border-right: 1px solid #ccc;
       border-bottom: 1px solid #ccc; }
 
+#view-page-cars-series {
+  background-color: #ddd; }
+  #view-page-cars-series .banner {
+    padding-top: 20%; }
+  #view-page-cars-series .series-list {
+    padding: 0 30px 30px; }
+  #view-page-cars-series .serie-item {
+    padding: 25px 5px;
+    border-bottom: 1px solid #555;
+    position: relative; }
+    #view-page-cars-series .serie-item .button {
+      position: absolute;
+      top: 50%;
+      right: 5px;
+      height: 30px;
+      margin-top: -15px;
+      font-size: 12px;
+      line-height: 18px;
+      padding: 5px 15px;
+      border: 1px solid #555;
+      border-radius: 5px; }
+
 #view-nav-jobs .subtitle {
   padding: 5px 15px;
   background-color: #91c3ef;

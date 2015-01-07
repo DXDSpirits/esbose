@@ -87,7 +87,8 @@
                     template: '{{name}}',
                     goToBrand: function() {
                         toggleMenu();
-                        console.log(this.model.toJSON());
+                        //console.log(this.model.toJSON());
+                        location.href = 'page-cars-series.html#' + this.model.id;
                     }
                 })
             }))({

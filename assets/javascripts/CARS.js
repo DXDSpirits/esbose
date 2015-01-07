@@ -271,7 +271,7 @@
         "image" : "http://bose.cn/upfile/20140916110942_1.jpg"
     }];
 })();
-
+/*
 (function FUCK_YOU_BOSE_I_AM_A_SPIDER() {
     var brandList = [{
         name : "奥迪",
@@ -326,3 +326,4 @@
     });
     window.brandList = brandList;
 })();
+*/
