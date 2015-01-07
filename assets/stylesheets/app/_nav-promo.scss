@@ -1,3 +1,61 @@
 #view-nav-promo {
-	
+    .menu-icon {
+        position: absolute;
+        z-index: 1;
+        left: 10px;
+        top: 10px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        line-height: 40px;
+        font-size: 20px;
+        text-align: center;
+        color: #aaa;
+        background-color: rgba(#fff, 0.5);
+        &:active {
+            background-color: rgba(#fff, 0.9);
+        }
+        @include user-select(none);
+    }
+    .menu {
+        position: absolute;
+        z-index: 1;
+        left: 60px;
+        min-width: 200px;
+        top: 0;
+        padding: 15px 20px 10px;
+        background-color: rgba(#000, 0.3);
+        .menu-item {
+            opacity: 0.7;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #fff;
+            border-bottom: 1px solid #fff;
+        }
+    }
+    .viewport {
+        overflow: hidden;
+        position: absolute;
+        z-index: 0;
+        bottom: 25%;
+        left: 0;
+        width: 100%;
+    }
+    .scroll {
+        margin: 0 auto;
+    }
+    .scroll-inner {
+        @include clearfix();
+    }
+	.promo-item {
+	    float: left;
+	    .img {
+	        @include translate3d(0, 0, 0);
+	        margin: 10%;
+	        padding-top: 80%;
+	        background-color: #fff;
+	        box-shadow: 0 1px 3px rgba(#000, 0.3);
+	    }
+	}
 }
