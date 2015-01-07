@@ -44,34 +44,20 @@
     </div>
 
     <div class="view" id="view-nav-cars">
-        <div id="carousel-cars" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-cars" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-cars" data-slide-to="1"></li>
-                <li data-target="#carousel-cars" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="item active">
-                    <div class="img" data-bg-src="images/cars-slide-1.jpg"></div>
-                </div>
-                <div class="item">
-                    <div class="img" data-bg-src="images/cars-slide-2.jpg"></div>
-                </div>
-                <div class="item">
-                    <div class="img" data-bg-src="images/cars-slide-3.jpg"></div>
-                </div>
-            </div><!-- Controls -->
-            <a class="left carousel-control" href="#carousel-cars" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carousel-cars" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
+        <div class="scroll">
+            <div class="scroll-inner clearfix">
+                <div class="img pull-left" data-bg-src="images/cars-slide-1.jpg"></div>
+                <div class="img pull-left" data-bg-src="images/cars-slide-2.jpg"></div>
+                <div class="img pull-left" data-bg-src="images/cars-slide-3.jpg"></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="dotty"></div>
         </div>
         <div class="video-wrapper">
             <div class="img" data-bg-src="images/cars-video-placeholder.jpg"></div>
             <p class="text-right">(建议在WiFi环境下观看)</p>
-            <video src="assets/images/The-Bose-Difference.mp4"></video>
+            <video id="video_player_0" width="100%" height="100%" style="position:absolute;top:-200%;left:-200%" x-webkit-airplay="true" controls="" preload="none" src="http://180.153.90.15/vhot2.qqvideo.tc.qq.com/d0144dhkfl9.m701.mp4?vkey=AE850001C362130F651116B202F7F79BC76E13854677264FAD287F24B6C032FE726F0BE17B0461D59BDB274C00AF6A9587AC574255E9A448&amp;br=29&amp;platform=2&amp;fmt=auto&amp;level=0&amp;sdtfrom=v3010"></video>
         </div>
         <article>
             <h4 class="text-center">BOSE汽车音响</h4>
@@ -96,23 +82,40 @@
 
     <script src="assets/configs.js"></script>
     <script src="assets/javascripts/amour.js"></script>
+    <script src="assets/javascripts/plugins/iscroll.js"></script>
     <script src="assets/javascripts/CARS.js"></script>
     
     <script>
         (function() {
+            $('.scroll-inner').css('width', 3 * $(window).width());
+            $('.scroll-inner .img').css({
+                width: $(window).width(),
+                height: $(window).width() * 1.1
+            });
+            var scrollNP = new IScroll('#view-nav-cars .scroll', {
+                snap: true,
+                scrollY: false,
+                scrollX: true,
+                momentum: false,
+                bounce: false,
+                indicators: {
+                    el: $('#view-nav-cars .scroll-indicator')[0],
+                    resize: false
+                }
+            });
             $('.video-wrapper').on('click', function() {
                 //var audio = new Audio('assets/images/The-Bose-Difference.mp4');
                 //audio.play();
                 //location.href = 'assets/images/The-Bose-Difference.mp4';
                 var video = $('video')[0];
                 video.play();
-                if (video.requestFullscreen) {
+                /*if (video.requestFullscreen) {
                     video.requestFullscreen();
                 } else if (video.mozRequestFullScreen) {
                     video.mozRequestFullScreen();
                 } else if (video.webkitRequestFullscreen) {
                     video.webkitRequestFullscreen();
-                }
+                }*/
             });
         })();
     </script>
