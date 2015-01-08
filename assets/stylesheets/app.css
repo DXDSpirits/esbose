@@ -218,11 +218,13 @@
     width: 100%;
     background-color: #bbb; }
     #view-nav-cars footer .text {
+      font-size: 1.2em;
       width: 40%;
-      padding: 1em; }
+      padding: 0.6em; }
     #view-nav-cars footer .menu {
+      font-size: 1.2em;
       width: 60%;
-      padding: 1em;
+      padding: 0.6em;
       border: 1px solid #ccc;
       position: relative;
       z-index: 1; }
