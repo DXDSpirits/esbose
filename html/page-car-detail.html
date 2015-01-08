@@ -2,33 +2,67 @@
 <html class="no-js">
     <head>
         include "includes/metadata.html"
-        <title></title>
+        <title>汽车音响</title>
         include "includes/stylesheets.html"
     </head>
     <body>
         
         include "includes/apploader.html"
         <div class="view" id="view-page-car-detail"></div>
+        include "sections/car-detail-templates.html"
 
         include "includes/javascripts.html"
         <script src="assets/javascripts/CARS.js"></script>
         
         <script>
+            function transformText(text) {
+                var lines = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
+                var html = '';
+                var list = false, title = true;
+                for (var i=0; i<lines.length; i++) {
+                    var line = lines[i].trim();
+                    if (title && line) {
+                        html += '<h4>' + line.replace('量身', '<br>量身') + '</h4>';
+                        title = false;
+                    } else if (line.slice(-3) == '包括：') {
+                        html += '<p>' + line + '</p><ul>';
+                        list = true;
+                    } else if (list && line) {
+                        html += '<li>' + line.slice(1).trim() + '</li>';
+                    } else if (list && !line) {
+                        html += '</ul><div class="spliter"></div>';
+                        list = false;
+                    } else if (line == '系统亮点') {
+                        html += '<h4>' + line + '</h4>';
+                    } else if (line) {
+                        html += '<p>' + line + '</p>';
+                    }
+                }
+                return html;
+            };
+        </script>
+
+        <script>
             (function() {
                 var car = new Amour.Model();
                 var carView = new (Amour.ModelView.extend({
-                    template: '{{{content}}}'
+                    template: '<div class="img" data-bg-src="{{image}}"></div><div class="content">{{{description}}}</div>'
                 }))({
                     model: car,
                     el: $('#view-page-car-detail')
                 });
                 
                 var hash = window.location.hash;
-                var serieID = +hash.slice(1);
-                var serie = CARS_SERIES[serieID];
+                var split = hash.slice(1).split('/');
+                var brandID = split[0], serieID = split[1];
+                var brand = _.findWhere(CARS, {id: brandID});
+                var serie = _.findWhere(brand.series, {id: serieID});;
                 console.log(serie);
-                $('title').text(serie.name);
+                serie.image = 'images/cars/' + brand.id + '/' + serie.id + '.jpg';
+                serie.description = transformText($('#template-car-detail-' + brand.id + '-' + serie.id).text());
                 car.set(serie);
+                
+                //$('title').text(serie.name);
                 /*var url = Amour.APIHost + '/BoseWechat.Web/Api/ProductCenter/GetProductContentByID';
                 $.get(url, {
                     id: serieID,

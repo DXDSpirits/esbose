@@ -66,6 +66,12 @@
         
         <script>
             (function() {
+                var hash = window.location.hash;
+                var brandID = hash.slice(1);
+                var brand = _.findWhere(CARS, {id: brandID});
+                $('title').text(brand.name);
+                Amour.loadBgImage($('.banner'), 'images/cars/brands/' + brand.id + '.jpg');
+                
                 var series = new Amour.Collection();
                 var seriesView = new (Amour.CollectionView.extend({
                     ModelView: Amour.ModelView.extend({
@@ -75,7 +81,7 @@
                             'click .button': 'goToDetail'
                         },
                         goToDetail: function() {
-                            location.href = 'page-car-detail.html#' + this.model.id;
+                            location.href = 'page-car-detail.html#' + brandID + '/' + this.model.id;
                         }
                     })
                 }))({
@@ -83,11 +89,6 @@
                     el: $('#view-page-cars-series .series-list')
                 });
                 
-                var hash = window.location.hash;
-                var brandID = +hash.slice(1);
-                var brand = _.findWhere(CARS, {id: brandID});
-                $('title').text(brand.name);
-                Amour.loadBgImage($('.banner'), brand.image);
                 series.reset(brand.series)
                 /*var url = Amour.APIHost + '/BoseWechat.Web/Api/ProductCenter/GetCategoryBasicWithProductsSummaryByParentID';
                 $.get(url, {

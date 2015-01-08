@@ -190,7 +190,8 @@
   background-color: #555; }
 
 #view-nav-cars {
-  background-color: #aaa;
+  background: url("../images/nav-cars-bg.jpg") repeat bottom;
+  background-size: 100% auto;
   color: #000; }
   #view-nav-cars, #view-nav-cars p, #view-nav-cars h1, #view-nav-cars h2, #view-nav-cars h3, #view-nav-cars h4, #view-nav-cars h5, #view-nav-cars h6 {
     font-family: bose, "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif; }
@@ -252,7 +253,7 @@
 #view-page-cars-series {
   background-color: #ddd; }
   #view-page-cars-series .banner {
-    padding-top: 20%; }
+    padding-top: 25%; }
   #view-page-cars-series .series-list {
     padding: 0 30px 30px; }
   #view-page-cars-series .serie-item {
@@ -271,19 +272,44 @@
       border: 1px solid #555;
       border-radius: 5px; }
 
-#view-page-car-detail .cars_img img {
-  width: 100%; }
-#view-page-car-detail .cars_name, #view-page-car-detail .cars_content {
-  margin: 20px; }
-#view-page-car-detail .cars_name {
-  padding: 10px 0;
-  border-bottom: 1px solid #aaa; }
-#view-page-car-detail .cars_name_name {
-  font-size: 1.5em;
-  font-weight: bold; }
-#view-page-car-detail a[href="javascript:history.go(-1);"] {
-  display: none; }
+#view-page-car-detail > .img {
+  padding-top: 50%; }
+#view-page-car-detail > .content {
+  padding: 15px 15px 50px;
+  font-size: 0.8em; }
+  #view-page-car-detail > .content h4 {
+    font-size: 1.5em;
+    font-weight: bold; }
+  #view-page-car-detail > .content ul {
+    padding-left: 15px;
+    list-style-type: disc; }
+#view-page-car-detail .spliter {
+  margin: 30px auto;
+  border-bottom: 1px solid #555; }
 
+/*
+#view-page-car-detail {
+	.cars_img {
+		img {
+			width: 100%;
+		}
+	}
+	.cars_name, .cars_content {
+		margin: 20px;
+	}
+	.cars_name {
+		padding: 10px 0;
+		border-bottom: 1px solid #aaa;
+	}
+	.cars_name_name {
+		font-size: 1.5em;
+		font-weight: bold;
+	}
+	a[href="javascript:history.go(-1);"] {
+		display: none;
+	}
+}
+*/
 #view-nav-jobs .subtitle {
   padding: 5px 15px;
   background-color: #91c3ef;

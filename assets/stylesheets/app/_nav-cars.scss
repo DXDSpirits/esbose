@@ -2,7 +2,9 @@
 	&, p, h1, h2, h3, h4, h5, h6 {
 		font-family: bose, $font-family-sans-serif;
 	}
-	background-color: #aaa;
+	//background-color: #aaa;
+	background: url('../images/nav-cars-bg.jpg') repeat bottom;
+	background-size: 100% auto;
 	color: #000;
 	article {
 		padding: 10px 30px 50px;
@@ -18,7 +20,8 @@
 		}
 	}
 	video {
-		//display: none;
+		//display: block;
+		//width: 100%;
 	}
 	.scroll-indicator {
 		position: relative;
@@ -78,7 +81,7 @@
 #view-page-cars-series {
 	background-color: #ddd;
 	.banner {
-		padding-top: 20%;
+		padding-top: 25%;
 	}
 	.series-list {
 		padding: 0 30px 30px;
@@ -103,6 +106,30 @@
 }
 
 #view-page-car-detail {
+	> .img {
+		padding-top: 50%;
+	}
+	> .content {
+		padding: 15px 15px 50px;
+		font-size: 0.8em;
+		h4 {
+			font-size: 1.5em;
+			font-weight: bold;
+		}
+		ul {
+			padding-left: 15px;
+			//width: 50%;
+			list-style-type: disc;
+		}
+	}
+	.spliter {
+		margin: 30px auto;
+		border-bottom: 1px solid #555;
+	}
+}
+
+/*
+#view-page-car-detail {
 	.cars_img {
 		img {
 			width: 100%;
@@ -123,3 +150,4 @@
 		display: none;
 	}
 }
+*/
