@@ -14,14 +14,20 @@
 		overflow: hidden;
 	}
 	.video-wrapper {
+	    position: relative;
 		margin: 20px;
 		> .img {
 			padding-top: 45%;
 		}
-	}
+	} 
 	video {
-		//display: block;
-		//width: 100%;
+	    position: absolute;
+	    z-index: -1;
+	    top: 0;
+	    left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
 	}
 	.scroll-indicator {
 		position: relative;
@@ -110,17 +116,48 @@
 		padding-top: 50%;
 	}
 	> .content {
+	    position: relative;
 		padding: 15px 15px 50px;
 		font-size: 0.8em;
 		h4 {
 			font-size: 1.5em;
 			font-weight: bold;
+			margin-bottom: 20px;
 		}
 		ul {
+		    margin-top: 10px;
 			padding-left: 15px;
-			//width: 50%;
 			list-style-type: disc;
 		}
+		li {
+		    margin-bottom: 4px;
+		}
+        .pull-left {
+            width: 65%;
+        }
+        .pull-right {
+            width: 31%;
+        }
+	}
+	.video-item {
+	    position: relative;
+	    p {
+	        font-size: 0.55em;
+	        text-align: center;
+	    }
+	    .img {
+	        padding-top: 50%;
+	    }
+	    video {
+	        display: block;
+	        position: absolute;
+	        z-index: -1;
+	        top: 0;
+	        left: 0;
+	        width: 100%;
+	        height: 100%;
+	        opacity: 0;
+	    }
 	}
 	.spliter {
 		margin: 30px auto;

@@ -712,21 +712,47 @@
         
         <script>
             function transformText(text) {
+                var $videos = [
+                    '<div class="video-item"><div class="img" data-bg-src="images/car-video-1.jpg"></div><p>Bose AST高级声场定位技术</p><video preload="auto" src="http://meiwei.u.qiniudn.com/bose-ast.mp4"></video></div>',
+                    '<div class="video-item"><div class="img" data-bg-src="images/car-video-2.jpg"></div><p>Bose AudioPilot噪音补偿技术</p><video preload="auto" src="http://meiwei.u.qiniudn.com/bose-audiopilot.mp4"></video></div>',
+                    '<div class="video-item"><div class="img" data-bg-src="images/car-video-3.jpg"></div><p>Bose Centerpoint信号处理技术</p><video preload="auto" src="http://meiwei.u.qiniudn.com/bose-centerpoint.mp4"></video></div>',
+                    '<div class="video-item"><div class="img" data-bg-src="images/car-video-4.jpg"></div><p>Bose主动声音管理技术</p><video preload="auto" src="http://meiwei.u.qiniudn.com/bose-noise.mp4"></video></div>'
+                ];
+                var findVideo = function(line) {
+                    if (line.indexOf('AST') >= 0) {
+                        return $videos[0];
+                    } else if (line.indexOf('AudioPilot') >= 0) {
+                        return $videos[1];
+                    } else if (line.indexOf('Centerpoint') >= 0) {
+                        return $videos[2];
+                    } else if (line.indexOf('ANC') >= 0) {
+                        return $videos[3];
+                    } else {
+                        return '';
+                    }
+                };
                 var lines = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
                 var html = '';
+                var video = '';
                 var list = false, title = true;
                 for (var i=0; i<lines.length; i++) {
                     var line = lines[i].trim();
                     if (title && line) {
                         html += '<h4>' + line.replace('量身', '<br>量身') + '</h4>';
+                        html += '<div class="clearfix"><div class="pull-left">';
                         title = false;
                     } else if (line.slice(-3) == '包括：') {
-                        html += '<p>' + line + '</p><ul>';
+                        html += '<p>' + line + '</p>';
+                        html += '<ul>';
                         list = true;
                     } else if (list && line) {
                         html += '<li>' + line.slice(1).trim() + '</li>';
+                        video += findVideo(line);
                     } else if (list && !line) {
-                        html += '</ul><div class="spliter"></div>';
+                        html += '</ul></div>';
+                        html += '<div class="video-wrapper pull-right">' + video + '</div>';
+                        html += '</div>';
+                        html += '<div class="spliter"></div>';
                         list = false;
                     } else if (line == '系统亮点') {
                         html += '<h4>' + line + '</h4>';
@@ -757,6 +783,18 @@
                 serie.image = 'images/cars/' + brand.id + '/' + serie.id + '.jpg';
                 serie.description = transformText($('#template-car-detail-' + brand.id + '-' + serie.id).text());
                 car.set(serie);
+                
+                $('.video-item').on('click', function() {
+                    var video = $(this).find('video')[0];
+                    video.play();
+                    if (video.requestFullscreen) {
+                        video.requestFullscreen();
+                    } else if (video.mozRequestFullScreen) {
+                        video.mozRequestFullScreen();
+                    } else if (video.webkitRequestFullscreen) {
+                        video.webkitRequestFullscreen();
+                    }
+                });
                 
                 //$('title').text(serie.name);
                 /*var url = Amour.APIHost + '/BoseWechat.Web/Api/ProductCenter/GetProductContentByID';
