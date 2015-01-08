@@ -1,4 +1,7 @@
 #view-nav-cars {
+	&, p, h1, h2, h3, h4, h5, h6 {
+		font-family: bose, $font-family-sans-serif;
+	}
 	background-color: #aaa;
 	color: #000;
 	article {
