@@ -75,80 +75,6 @@
         <script src="assets/configs.js"></script>
         <script src="assets/javascripts/amour.js"></script>
         
-        <script>
-            var TEST_DATA = [{
-                "ID" : 0,
-                "Name" : "类别1",
-                "ProductsSummary" : [{
-                    "ID" : 4,
-                    "Name" : "产品1",
-                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
-                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
-                }, {
-                    "ID" : 5,
-                    "Name" : "产品1",
-                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
-                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
-                }]
-            }, {
-                "ID" : 0,
-                "Name" : "类别2",
-                "ProductsSummary" : [{
-                    "ID" : 4,
-                    "Name" : "产品1",
-                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
-                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
-                }, {
-                    "ID" : 5,
-                    "Name" : "产品1",
-                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
-                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
-                }]
-            }, {
-                "ID" : 0,
-                "Name" : "类别3",
-                "ProductsSummary" : [{
-                    "ID" : 4,
-                    "Name" : "产品1",
-                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
-                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
-                }, {
-                    "ID" : 5,
-                    "Name" : "产品1",
-                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
-                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
-                }]
-            }, {
-                "ID" : 0,
-                "Name" : "类别4",
-                "ProductsSummary" : [{
-                    "ID" : 4,
-                    "Name" : "产品1",
-                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
-                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
-                }, {
-                    "ID" : 5,
-                    "Name" : "产品1",
-                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
-                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
-                }]
-            }, {
-                "ID" : 0,
-                "Name" : "类别5",
-                "ProductsSummary" : [{
-                    "ID" : 4,
-                    "Name" : "产品1",
-                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
-                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
-                }, {
-                    "ID" : 5,
-                    "Name" : "产品1",
-                    "Summary" : "这个是测试的boe qc15耳机的产品数据信息这个是测试的boe qc15耳机的产品数据信息,这个是测试的boe qc15耳机的产品数据信息",
-                    "ImageUrl" : "http://tatup.qiniudn.com/o_197tm1ikl1chei4anlv1071foj1f.jpg"
-                }]
-            }];
-        </script>
-        
         <script id="template-product-item" type="text/x-mustache-template">
             <div class="container">
                 <h4 class="category-name">{{Name}}</h4>
@@ -176,17 +102,28 @@
                     collection: productList,
                     el: $('#view-page-products-list')
                 });
-                //productList.reset(TEST_DATA);
-                //return;
                 
                 var hash = window.location.hash;
                 var parentID = +hash.slice(1);
                 var url = Amour.APIHost + '/BoseWechat.Web/Api/ProductCenter/GetCategoryBasicWithProductsSummaryByParentID';
+                var adjust = function() {
+                    $('.product-name').each(function() {
+                        console.log($(this).find('a').width());
+                        console.log($(this).width());
+                        if ($(this).find('a').width() < $(this).width() * 0.6) {
+                            $(this).next().find('.img').css({
+                                'position': 'relative',
+                                'top': '-30px'
+                            });
+                        }
+                    });
+                };
                 $.get(url, {
                     parentID: parentID,
                 }, function(data) {
                     if (+data.Code == 0) {
                         productList.reset(data.Result);
+                        _.delay(adjust, 1000);
                     }
                 });
             })();
