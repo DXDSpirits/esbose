@@ -37,25 +37,26 @@
 </head>
 <body>
     
-    <div class="view" id="view-page-new-products">
-        <div class="scroll">
-            <div class="scroll-wrapper">
-                <div class="scroll-item scroll-item-1">
-                    <div class="background img" data-bg-src="images/page-new-products-bg.jpg"></div>
-                </div>
-                <div class="scroll-item scroll-item-2">
-                    <div class="background img boy" data-bg-src="images/page-new-products-boy.jpg"></div>
-                    <div class="background img girl" data-bg-src="images/page-new-products-girl.jpg"></div>
-                    <div class="background img ribbon" data-bg-src="images/page-new-products-ribbon.png"></div>
-                    <div class="background img hero" data-bg-src="images/page-new-products-hero.jpg"></div>
-                    <div class="background img text-boy" data-bg-src="images/page-new-products-text-boy.png"></div>
-                    <div class="background img text-girl" data-bg-src="images/page-new-products-text-girl.png"></div>
-                </div>
-            </div>
-        </div>
-        <div class="gesture-up text-center">
-            <i class="fa fa-angle-double-up"></i>
-        </div>
+    <div class="view" id="view-page-new-products-list">
+        <a class="message">
+            <div class="hero img" data-bg-src="images/new-product-banner.jpg"></div>
+        </a>
+        <a class="message" href="http://wechat.kaytune.com/page/xilie/html/66.aspx">
+            <div class="text">SoundSport™耳塞式运动耳机</div>
+            <div class="img" data-bg-src="images/new-product-1.jpg"></div>
+        </a>
+        <a class="message" href="http://wechat.kaytune.com/page/xilie/html/64.aspx">
+            <div class="text">Bose® SoundLink® Colour蓝牙® 扬声器</div>
+            <div class="img" data-bg-src="images/new-product-2.jpg"></div>
+        </a>
+        <a class="message" href="http://wechat.kaytune.com/page/xilie/html/65.aspx">
+            <div class="text">Bose® SoundTrueTM 耳塞式耳机</div>
+            <div class="img" data-bg-src="images/new-product-3.jpg"></div>
+        </a>
+        <a class="message" href="http://210.73.204.248/page/xilie/html/59.aspx">
+            <div class="text">Bose® QuietComfort®25有源消噪耳机</div>
+            <div class="img" data-bg-src="images/new-product-4.jpg"></div>
+        </a>
     </div>
     
 
@@ -74,15 +75,7 @@
     <script src="assets/javascripts/plugins/iscroll.js"></script>
     <script>
         (function() {
-            $('#view-page-new-products .scroll, #view-page-new-products .scroll-item').css({
-                height: $(window).height()
-            });
-            var scrollNP = new IScroll('#view-page-new-products .scroll', {
-                snap: true
-            });
-            $('#view-page-new-products').on('click', function() {
-                location.href = 'page-new-products-list.html';
-            });
+            //
         })();
     </script>
     

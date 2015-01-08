@@ -164,6 +164,30 @@
   font-size: 50px;
   color: rgba(255, 255, 255, 0.5); }
 
+#view-page-new-products-list {
+  padding: 30px 20px; }
+  #view-page-new-products-list .message {
+    display: block;
+    color: #000;
+    padding: 10px;
+    border-bottom: 1px solid #eee; }
+    #view-page-new-products-list .message:before, #view-page-new-products-list .message:after {
+      content: " ";
+      display: table; }
+    #view-page-new-products-list .message:after {
+      clear: both; }
+  #view-page-new-products-list .text {
+    float: left;
+    width: 80%;
+    padding-top: 5px;
+    padding-right: 15px; }
+  #view-page-new-products-list .text + .img {
+    float: right;
+    width: 20%;
+    padding-top: 20%; }
+  #view-page-new-products-list .hero {
+    padding-top: 56.3%; }
+
 #view-nav-products-category > .background {
   background-size: 100% 100%; }
 #view-nav-products-category .banner {
