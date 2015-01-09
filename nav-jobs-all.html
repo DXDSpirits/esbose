@@ -44,9 +44,7 @@
         </div>
     </div>
 
-    <div class="view" id="view-nav-jobs">
-        <div class="hero img" data-bg-src="images/nav-jobs-bg.jpg"></div>
-        <div class="hot">热门职位</div>
+    <div class="view" id="view-nav-jobs-all">
         <div class="jobs-list"></div>
     </div>
     
@@ -67,10 +65,7 @@
 
     <script>
         (function() {
-            $('.hero').css('height', $(window).height())
-                                       .on('click', function() {
-                                            location.href = 'nav-jobs-all.html';
-                                       });
+            $('.hero').css('height', $(window).height());
             $('body,html').animate({
                 scrollTop: $(window).height() * 0.7
             }, 1000);
@@ -110,7 +105,7 @@
                             collection: this.positions,
                             el: this.$('>.container')
                         });
-                        this.positions.reset(this.model.get('positions'))
+                        this.positions.reset(this.model.get('positions'));
                         return this;
                     }
                 })
@@ -118,7 +113,7 @@
                 collection: categories,
                 el: $('.jobs-list')
             });
-            categories.reset(JOBS);
+            categories.reset(JOBSALL);
         })();
     </script>
 

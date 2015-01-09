@@ -37,7 +37,7 @@
             (function() {
                 $('#view-page-job-detail .content').css('min-height', $(window).height() - 50);
                 $('#view-page-job-detail .btn-return').on('click', function() {
-                    location.href = 'nav-jobs.html';
+                    history.back();
                 });
                 $('#view-page-job-detail .btn-share').on('click', function() {
                     var $tip = $('#view-page-job-detail .wechat-share-tip');
