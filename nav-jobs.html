@@ -46,7 +46,7 @@
 
     <div class="view" id="view-nav-jobs">
         <div class="hero img" data-bg-src="images/nav-jobs-bg.jpg"></div>
-        <div class="jobs-list hidden"></div>
+        <div class="jobs-list"></div>
     </div>
     
 
@@ -66,6 +66,11 @@
 
     <script>
         (function() {
+            $('#view-nav-jobs > .hero').css('height', $(window).height());
+            $('body,html').animate({
+                scrollTop: $(window).height() * 0.7
+            }, 1000);
+            /*
             $('#view-nav-jobs > .hero').css('height', $(window).height())
                                        .on('click', function() {
                                             $('.jobs-list').removeClass('hidden');
@@ -73,6 +78,7 @@
                                                 scrollTop: $(window).height()
                                             }, 1000);
                                        });
+            */
 
             var PositionsView = Amour.CollectionView.extend({
                 ModelView: Amour.ModelView.extend({
