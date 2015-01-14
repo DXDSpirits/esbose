@@ -9,33 +9,20 @@
     
     include "includes/apploader.html"
     <div class="view" id="view-nav-jobs">
-        <div class="hero img" data-bg-src="images/nav-jobs-bg.jpg"></div>
+        <div class="hero img" data-bg-src="images/nav-jobs-bg-sauqre.jpg"></div>
         <div class="hot">热门职位</div>
         <div class="jobs-list"></div>
     </div>
     
     include "includes/javascripts.html"
     <script src="assets/javascripts/JOBS.js"></script>
-
+    
     <script>
         (function() {
-            $('.hero').css('height', $(window).width() * 1.2)
-                      .on('click', function() {
-                            location.href = 'nav-jobs-all.html';
-                       });
-            /*$('body,html').animate({
-                scrollTop: $(window).height() * 0.7
-            }, 1000);*/
-            /*
-            $('.hero').css('height', $(window).height())
-                                       .on('click', function() {
-                                            $('.jobs-list').removeClass('hidden');
-                                            $('body').animate({
-                                                scrollTop: $(window).height()
-                                            }, 1000);
-                                       });
-            */
-
+            $('.hero').on('click', function() {
+                location.href = 'nav-jobs-all.html';
+            });
+            
             var PositionsView = Amour.CollectionView.extend({
                 ModelView: Amour.ModelView.extend({
                     className: 'row position-item',

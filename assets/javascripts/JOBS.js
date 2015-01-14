@@ -32,17 +32,6 @@
 			]
 		}
 	];
-	window.JOBS = [
-        {
-            id: 1,
-            category: 'RDG(零售业务部)',
-            positions: [
-                {id: 100, nameEN: 'District Manager', name: '区域零售业务经理', location:'Shanghai'},
-                {id: 101, nameEN: 'Store Manager', name: '专卖店店长', location:'Shenyang'},
-                {id: 102, nameEN: 'Store Manager', name: '专卖店店长', location:'Wuxi'}
-            ]
-        }
-    ];
 	window.JOBSALL = [
 		{
 			id: 1,
