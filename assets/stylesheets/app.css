@@ -322,17 +322,17 @@
   #view-page-car-detail > .content li {
     margin-bottom: 4px; }
   #view-page-car-detail > .content .pull-left {
-    width: 100%; }
-#view-page-car-detail .video-wrapper {
-  margin-top: 30px; }
+    width: 65%; }
+  #view-page-car-detail > .content .pull-right {
+    width: 31%; }
 #view-page-car-detail .video-item {
   position: relative; }
   #view-page-car-detail .video-item p {
+    font-size: 0.55em;
     margin: 10px 0;
-    font-size: 1.2em;
     text-align: center; }
   #view-page-car-detail .video-item .img {
-    padding-top: 68%; }
+    padding-top: 50%; }
   #view-page-car-detail .video-item video {
     display: block;
     position: absolute;
@@ -408,6 +408,7 @@
   #view-page-job-detail > footer .split {
     border-right: 1px solid #ddd; }
 #view-page-job-detail .wechat-share-tip {
+  position: fixed;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.7);
   background-position: top;

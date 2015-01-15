@@ -3,13 +3,13 @@
         name : '奥迪',
         id : 'audi',
         series : [{
-            name : 'Audi A1',
+            name : 'A1',
             id : 'a1'
         }, {
             name : 'A6L/S6',
             id : 'a6'
         }, {
-            name : 'Audi A7',
+            name : 'A7',
             id : 'a7'
         }, {
             name : 'A8L/S8',
@@ -37,7 +37,7 @@
             name : 'Boxster',
             id : 'boxster'
         }, {
-            name : 'Cayenne卡宴',
+            name : 'Cayenne',
             id : 'cayenne'
         }, {
             name : 'Cayman',
@@ -53,29 +53,29 @@
         name : '别克',
         id : 'buick',
         series : [{
-            name : 'Enclave昂科雷',
+            name : 'Enclave 昂科雷',
             id : 'enclave'
         }, {
-            name : 'Envision昂科威',
+            name : 'Envision 昂科威',
             id : 'envision'
         }, {
             name : 'GL8 豪华商务车',
             id : 'gl8'
         }, {
-            name : 'LaCrosse君越',
+            name : 'LaCrosse 君越',
             id : 'lacrosse'
         }, {
-            name : 'Regal君威',
+            name : 'Regal GS 君威 GS',
             id : 'regal'
         }]
     }, {
         name : '红旗',
         id : 'hongqi',
         series : [{
-            name : '红旗H7',
+            name : 'H7',
             id : 'h7'
         }, {
-            name : '红旗L5',
+            name : 'L5',
             id : 'l5'
         }]
     }, {
@@ -101,23 +101,23 @@
         name : '雷诺',
         id : 'renault',
         series : [{
-            name : 'Koleos科雷傲',
+            name : 'Koleos 科雷傲',
             id : 'koleos'
         }, {
-            name : 'Latitude纬度',
+            name : 'Latitude 纬度',
             id : 'latitude'
         }, {
-            name : 'Talisman塔利斯曼',
+            name : 'Talisman 塔利斯曼',
             id : 'talisman'
         }, {
-            name : 'Fluence风朗',
+            name : 'Fluence 风朗',
             id: 'fluence'
         }]
     }, {
         name : '马自达',
         id : 'mazda',
         series : [{
-            name : 'Mazda ATENZA阿特兹',
+            name : 'Mazda ATENZA 阿特兹',
             id : 'atenza'
         }, {
             name : 'Mazda CX-5',

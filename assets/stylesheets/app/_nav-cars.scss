@@ -133,27 +133,27 @@
 		    margin-bottom: 4px;
 		}
         .pull-left {
-            //width: 65%;
-            width: 100%;
+            width: 65%;
+            //width: 100%;
         }
         .pull-right {
-            //width: 31%;
+            width: 31%;
         }
 	}
 	.video-wrapper {
-		margin-top: 30px;
+		//margin-top: 30px;
 	}
 	.video-item {
 	    position: relative;
 	    p {
-	        //font-size: 0.55em;
+	        font-size: 0.55em;
 	        margin: 10px 0;
-	        font-size: 1.2em;
+	        //font-size: 1.2em;
 	        text-align: center;
 	    }
 	    .img {
-	        //padding-top: 50%;
-	        padding-top: 68%;
+	        padding-top: 50%;
+	        //padding-top: 68%;
 	    }
 	    video {
 	        display: block;

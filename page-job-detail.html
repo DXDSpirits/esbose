@@ -403,7 +403,7 @@
                 var hash = window.location.hash;
                 var jobID = +hash.slice(1);
                 var position = JOB_POSITIONS[jobID];
-                console.log(position.nameEN.split(' ').join('-'))
+                console.log(position.nameEN.split(' ').join('-'));
                 var description = $('#template-job-description-' + position.nameEN.split(' ').join('-')).text();
                 var lines = description.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n');
                 var descHTML = '';

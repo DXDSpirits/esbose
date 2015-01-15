@@ -54,7 +54,7 @@
                         video += findVideo(line);
                     } else if (list && !line) {
                         html += '</ul></div>';
-                        //html += '<div class="video-wrapper pull-right">' + video + '</div>';
+                        html += '<div class="video-wrapper pull-right">' + video + '</div>';
                         html += '</div>';
                         html += '<div class="spliter"></div>';
                         list = false;
@@ -64,7 +64,7 @@
                         html += '<p>' + line + '</p>';
                     }
                 }
-                html += '<div class="video-wrapper">' + video + '</div>';
+                //html += '<div class="video-wrapper">' + video + '</div>';
                 return html;
             };
         </script>
