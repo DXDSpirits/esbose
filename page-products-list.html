@@ -47,6 +47,9 @@
             .category-name {
                 margin-top: 2em;
             }
+            .product-image {
+                background-size: contain;
+            }
         </style>
         
     </head>
@@ -83,7 +86,7 @@
                 <div class="row">
                     <div class="col-xs-7">{{Summary}}</div>
                     <div class="col-xs-5">
-                        <div class="img" data-bg-src="{{ImageUrl}}" style="padding-top: 100%;"></div>
+                        <div class="img product-image" data-bg-src="{{ImageUrl}}" style="padding-top: 100%;"></div>
                     </div>
                 </div>
                 {{/ProductsSummary}}
