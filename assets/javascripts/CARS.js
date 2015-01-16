@@ -175,7 +175,7 @@
         name : '英菲尼迪',
         id : 'infiniti',
         series : [{
-            name : 'Q50',
+            name : 'Q50/Q50L',
             id : 'q50'
         }, {
             name : 'Q60',
