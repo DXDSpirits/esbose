@@ -370,7 +370,8 @@
 }
 */
 #view-nav-jobs .hot, #view-nav-jobs-all .hot {
-  padding: 5px 15px; }
+  padding: 5px 15px;
+  font-size: 1.2em; }
 #view-nav-jobs .hero, #view-nav-jobs-all .hero {
   padding-top: 100%; }
 #view-nav-jobs .subtitle, #view-nav-jobs-all .subtitle {
