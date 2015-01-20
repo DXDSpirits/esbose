@@ -51,6 +51,7 @@
 	.promo-item {
 	    float: left;
 	    .img {
+	        display: block;
 	        @include translate3d(0, 0, 0);
 	        margin: 10%;
 	        padding-top: 80%;
