@@ -50,7 +50,7 @@
                         html += '<ul>';
                         list = true;
                     } else if (list && line) {
-                        html += '<li>' + line.slice(1).trim() + '</li>';
+                        html += '<li>' + line.trim() + '</li>';
                         video += findVideo(line);
                     } else if (list && !line) {
                         html += '</ul></div>';

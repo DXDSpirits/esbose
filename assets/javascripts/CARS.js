@@ -31,7 +31,7 @@
         name : '保时捷',
         id : 'porsche',
         series : [{
-            name : '911 Carrera',
+            name : '911 Carrera (S)',
             id : 'carrera'
         }, {
             name : 'Boxster',
@@ -117,16 +117,16 @@
         name : '马自达',
         id : 'mazda',
         series : [{
-            name : 'Mazda ATENZA 阿特兹',
+            name : 'ATENZA 阿特兹',
             id : 'atenza'
         }, {
-            name : 'Mazda CX-5',
+            name : 'CX-5',
             id : 'cx5'
         }, {
-            name : 'Mazda CX-7',
+            name : 'CX-7',
             id : 'cx7'
         }, {
-            name : 'Mazda MX-5',
+            name : 'MX-5',
             id : 'mx5'
         }]
     }, {
