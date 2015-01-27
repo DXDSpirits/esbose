@@ -1,6 +1,13 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        uglify: {
+            amour: {
+                options: { mangle: true },
+                src: 'assets/javascripts/amour-src.js',
+                dest: 'assets/javascripts/amour.js'
+            }
+        },
         sass: {
             bootstrap: {
                 options: { sourcemap: 'none' },
@@ -32,6 +39,12 @@ module.exports = function(grunt) {
             }
         },
         watch: {
+            amour: {
+                files: [
+                    'assets/javascripts/amour-src.js'
+                ],
+                tasks: ['uglify:amour']
+            },
             sass_bootstrap: {
                 files: [
                     'assets/stylesheets/bootstrap/**/*.scss',
@@ -86,7 +99,7 @@ module.exports = function(grunt) {
         },
         concurrent: {
             dist: {
-                tasks: ['sass', 'includes'],
+                tasks: ['uglify', 'sass', 'includes'],
                 options: { logConcurrentOutput: true }
             },
             server: {
@@ -97,6 +110,7 @@ module.exports = function(grunt) {
     });
     
     grunt.loadNpmTasks('grunt-includes');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-concurrent');
