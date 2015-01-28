@@ -1,4 +1,19 @@
 #view-nav-products-category {
+    .category-item {
+        @include user-select(none);
+        .img {
+            padding-top: 33.28125%;
+            background-size: 100% 200%;
+            background-position: bottom;
+        }
+        &:active .img,
+        &:hover .img {
+            background-position: top;
+        }
+    }
+}
+
+/*#view-nav-products-category {
     > .background {
         background-size: 100% 100%;
     }
@@ -29,4 +44,4 @@
         color: #fff;
         background-color: #555;
     }
-}
+}*/

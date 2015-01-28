@@ -44,15 +44,19 @@
         </div>
     </div>
 
-    <div class="view" id="view-nav-products-category">
+    <!--<div class="view" id="view-nav-products-category">
         <div class="background img" data-bg-src="images/nav-products-category-bg.jpg"></div>
         <div class="banner img" data-bg-src="images/nav-products-category-banner.jpg"></div>
         <div class="category-cube clearfix">
-            <!--<a class="category-item img pull-left" data-bg-src="images/nav-products-category-1.jpg" href="page-products-list.html#1003"></a>
+            <a class="category-item img pull-left" data-bg-src="images/nav-products-category-1.jpg" href="page-products-list.html#1003"></a>
             <a class="category-item img pull-left" data-bg-src="images/nav-products-category-2.jpg" href="page-products-list.html#1004"></a>
             <a class="category-item img pull-left" data-bg-src="images/nav-products-category-3.jpg" href="page-products-list.html#1005"></a>
-            <a class="category-item img pull-left" data-bg-src="images/nav-products-category-4.jpg" href="page-products-list.html#1006"></a>-->
+            <a class="category-item img pull-left" data-bg-src="images/nav-products-category-4.jpg" href="page-products-list.html#1006"></a>
         </div>
+    </div>-->
+    
+    <div class="view" id="view-nav-products-category">
+        
     </div>
     
 
@@ -69,13 +73,18 @@
     <script src="assets/configs.js"></script>
     <script src="assets/javascripts/amour.js"></script>
     
-    <script id="template-category-item" type="text/x-mustache-template">
+    <!--<script id="template-category-item" type="text/x-mustache-template">
         <div class="background img" data-bg-src="{{ImageUrl}}"></div>
         <div class="category-name">{{Name}}</div>
+    </script>-->
+    
+    <script id="template-category-item" type="text/x-mustache-template">
+        <div class="img" data-bg-src="{{ImageUrl}}"></div>
     </script>
-
+    
     <script>
         (function() {
+            var IDMAP = { 2019: 1, 2018: 2, 2017: 3, 2020: 4, 2022: 7, 2021: 6, 2023: 5, 2040: 8 };
             var template = $('#template-category-item').html();
             var categoryList = new Amour.Collection();
             var categoryView = new (Amour.CollectionView.extend({
@@ -83,12 +92,13 @@
                     events: {
                         'click': 'goToProductList'
                     },
-                    className: 'category-item img pull-left',
+                    className: 'category-item',
                     template: template,
                     serializeData: function() {
                         var data = Amour.ModelView.prototype.serializeData.call(this);
                         var ImageUrl = data.ImageUrl;
                         data.ImageUrl = /^http:\/\//.test(ImageUrl) ? ImageUrl : Amour.APIHost + '/BoseWechat.Web/' + ImageUrl;
+                        if (BOSE_CONFIGS.DEBUG) data.ImageUrl = 'images/products/' + IDMAP[data.ID] + '.jpg';
                         return data;
                     },
                     goToProductList: function() {
@@ -97,7 +107,7 @@
                 })
             }))({
                 collection: categoryList,
-                el: $('#view-nav-products-category .category-cube')
+                el: $('#view-nav-products-category')
             });
             var url = Amour.APIHost + '/BoseWechat.Web/Api/ProductCenter/GetRootCategories';
             $.get(url, {}, function(data) {

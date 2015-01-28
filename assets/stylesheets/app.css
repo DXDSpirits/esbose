@@ -191,31 +191,50 @@
   #view-page-new-products-list .hero {
     padding-top: 56.3%; }
 
-#view-nav-products-category > .background {
-  background-size: 100% 100%; }
-#view-nav-products-category .banner {
-  width: 100%;
-  padding-top: 54.53125%; }
 #view-nav-products-category .category-item {
-  width: 44%;
-  margin: 4%;
-  padding-top: 41.526%;
-  cursor: pointer;
-  position: relative; }
-  #view-nav-products-category .category-item:nth-child(n+3) {
-    margin-top: 0; }
-  #view-nav-products-category .category-item:nth-child(2n) {
-    margin-left: 0; }
-#view-nav-products-category .category-name {
-  position: absolute;
-  bottom: 0;
-  padding: 5px;
-  left: 0;
-  width: 100%;
-  text-align: center;
-  color: #fff;
-  background-color: #555; }
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+  #view-nav-products-category .category-item .img {
+    padding-top: 33.28125%;
+    background-size: 100% 200%;
+    background-position: bottom; }
+  #view-nav-products-category .category-item:active .img, #view-nav-products-category .category-item:hover .img {
+    background-position: top; }
 
+/*#view-nav-products-category {
+    > .background {
+        background-size: 100% 100%;
+    }
+    .banner {
+        width: 100%;
+        padding-top: 54.53125%;
+    }
+    .category-item {
+        width: 44%;
+        margin: 4%;
+        &:nth-child(n+3) {
+            margin-top: 0;
+        }
+        &:nth-child(2n) {
+            margin-left: 0;
+        }
+        padding-top: 41.526%;
+        cursor: pointer;
+        position: relative;
+    }
+    .category-name {
+        position: absolute;
+        bottom: 0;
+        padding: 5px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        background-color: #555;
+    }
+}*/
 #view-nav-cars {
   background: url("../images/nav-cars-bg.jpg") repeat bottom;
   background-size: 100% auto;
