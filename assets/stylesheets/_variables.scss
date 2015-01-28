@@ -6,8 +6,13 @@ $static-url: '../' !default;
     src: url('../fonts/hanyizhongyuan.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'bosegothic';
+    src: url('../fonts/bosegothic.ttf') format('truetype');
+}
+
 //== Typography
-$font-family-sans-serif:  "bose", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  "bosegothic", "bose", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 
 $font-family-base:        $font-family-sans-serif !default;

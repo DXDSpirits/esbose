@@ -1,6 +1,9 @@
 @font-face {
   font-family: 'bose';
   src: url("../fonts/hanyizhongyuan.ttf") format("truetype"); }
+@font-face {
+  font-family: 'bosegothic';
+  src: url("../fonts/bosegothic.ttf") format("truetype"); }
 .view {
   position: relative; }
 
@@ -218,7 +221,7 @@
   background-size: 100% auto;
   color: #000; }
   #view-nav-cars, #view-nav-cars p, #view-nav-cars h1, #view-nav-cars h2, #view-nav-cars h3, #view-nav-cars h4, #view-nav-cars h5, #view-nav-cars h6 {
-    font-family: bose, "bose", "Helvetica Neue", "Microsoft Yahei", Helvetica, Arial, sans-serif; }
+    font-family: bose, "bosegothic", "bose", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   #view-nav-cars article {
     padding: 10px 30px 50px; }
   #view-nav-cars .scroll {
