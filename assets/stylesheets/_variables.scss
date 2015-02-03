@@ -1,19 +1,42 @@
 
 $static-url: '../' !default;
 
-@font-face {
+/*@font-face {
     font-family: 'bose';
     src: url('../fonts/hanyizhongyuan.ttf') format('truetype');
+}*/
+
+/*@font-face {
+    font-family: 'bosegothic';
+    src: url('../fonts/bosegothic.ttf') format('truetype');
+}*/
+
+@font-face {
+    font-family:'hanyizhongyuan';
+    src: url('../fonts/hanyizhongyuan.eot');
+    src: url('../fonts/hanyizhongyuan.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/hanyizhongyuan.woff') format('woff'),
+         url('../fonts/hanyizhongyuan.ttf') format('truetype'),
+         url('../fonts/hanyizhongyuan.svg#HYe3gj-Regular') format('svg');
+    font-style: normal;
+    font-stretch: normal;
 }
 
 @font-face {
-    font-family: 'bosegothic';
-    src: url('../fonts/bosegothic.ttf') format('truetype');
+  font-family: 'bosegothic';
+  src: url('../fonts/bosegothic.eot');
+  src: url('../fonts/bosegothic.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/bosegothic.woff') format('woff'),
+       url('../fonts/bosegothic.ttf')  format('truetype'),
+       url('../fonts/bosegothic.svg#BoseGothicScreen-Reg') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
+
 //== Typography
-$font-family-sans-serif:  "bosegothic", "bose", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+$font-family-sans-serif:  "bosegothic", "hanyizhongyuan", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-serif:       "bosegothic", "hanyizhongyuan", Georgia, "Times New Roman", Times, serif !default;
 
 $font-family-base:        $font-family-sans-serif !default;
 $headings-font-family:    $font-family-sans-serif !default;
