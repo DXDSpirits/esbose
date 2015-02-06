@@ -93,8 +93,12 @@
   #view-portal-bose .nav-btn:active, #view-portal-bose .nav-btn:focus {
     background-color: #89f5e4; }
 
-#view-portal-news > .background {
-  background-position: bottom; }
+#view-portal-news > .background.top {
+  background-position: top;
+  background-size: 100% auto; }
+#view-portal-news > .background.bottom {
+  background-position: bottom;
+  background-size: contain; }
 #view-portal-news .nav-btn {
   color: #943626;
   background-image: -webkit-linear-gradient(top, white 0%, rgba(255, 255, 255, 0.3) 100%);
@@ -103,9 +107,6 @@
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFFFFFFF', endColorstr='#4DFFFFFF', GradientType=0);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); }
-#view-portal-news .buttons-stack {
-  top: 73%;
-  bottom: auto; }
 
 #view-nav-bosestyle > .background {
   background-size: contain;

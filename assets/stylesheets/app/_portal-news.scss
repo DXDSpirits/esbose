@@ -1,14 +1,16 @@
 #view-portal-news {
-	> .background {
+	> .background.top {
+	    background-position: top;
+	    background-size: 100% auto;
+	}
+	> .background.bottom {
 	    background-position: bottom;
+	    background-size: contain;
 	}
 	.nav-btn {
 	    color: #943626;
 	    @include gradient-vertical(rgba(#fff,1), rgba(#fff,0.3));
 	    box-shadow: 0 0 5px rgba(#000, 0.1);
 	}
-	.buttons-stack {
-	    top: 73%;
-	    bottom: auto;
-	}
+	.buttons-stack {}
 }
