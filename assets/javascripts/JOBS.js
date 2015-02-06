@@ -4,7 +4,7 @@
 			id: 1,
 			category: 'RDG(零售业务部)',
 			positions: [
-				{id: 101, nameEN: 'Store Manager', name: '专卖店店长', locationEN:'Shenyang', location:'上海'},
+				{id: 101, nameEN: 'Store Manager', name: '专卖店店长', locationEN:'Shenyang', location:'沈阳'},
 				{id: 102, nameEN: 'Store Manager', name: '专卖店店长', locationEN:'Wuxi', location:'无锡'},
 				{id: 104, nameEN: 'Store Sales', name: '专卖店店员', locationEN:'Hangzhou', location:'杭州'},
 				{id: 105, nameEN: 'Store Sales', name: '专卖店店员', locationEN:'Suzhou', location:'苏州'},
@@ -64,7 +64,8 @@
 				{id: 2003, nameEN: 'Online Business Supervisor', name: '电子商务主管', locationEN: 'Shanghai', location:'上海'},
 				{id: 2004, nameEN: 'Sales Assistant', name: '销售助理', locationEN: 'Shanghai', location:'上海'},
 				{id: 2005, nameEN: 'Customer Service Representative', name: '客户服务代表', locationEN: 'Shanghai', location:'上海'},
-				{id: 2006, nameEN: 'Logistic Assistant', name: '物流助理', locationEN: 'Shanghai', location:'上海'}
+				{id: 2006, nameEN: 'Logistic Assistant', name: '物流助理', locationEN: 'Shanghai', location:'上海'},
+				{id: 2007, nameEN: 'Accountant Assistant', name: '会计助理', locationEN: 'Shanghai', location:'上海'}
 			]
 		}/*, {
 			id: 3,
