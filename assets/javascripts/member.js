@@ -36,6 +36,22 @@
         initView: function() {
             this.getToken();
         },
+        lockSending: function() {
+            var $btn = $('.btn-send');
+            $btn.attr('disabled', true).html('<span>120</span> 秒后重发');
+            var second = 120;
+            var countdown = function(second) {
+                if (second == 0) {
+                    $btn.removeAttr('disabled').html('发送验证码');
+                } else {
+                    $btn.find('span').text(second);
+                    _.delay(function() {
+                        countdown(second-1);
+                    }, 1000)
+                }
+            }
+            countdown(120);
+        },
         sendCode: function(e) {
             e.preventDefault && e.preventDefault();
             var mobile = this.$('input[name=mobile]').val();
@@ -155,7 +171,11 @@
         },
         readImage: function(e, name) {
             console.log(e.target.files);
-            file = e.target.files[0];
+            var file = e.target.files[0];
+            if (file.size > 500 * 1024) {
+                alert('您上传的图片过大，请选择500K以内的图片重新上传');
+                return;
+            }
             reader = new FileReader();
             var self = this;
             reader.onloadend = function() {
@@ -177,7 +197,12 @@
                 alert('请先绑定会员');
                 return;
             };
-            this.productData['SerialNumber'] = this.$('input[name=serial]').val();
+            var serialNumber = this.$('input[name=serial]').val() || '';
+            if (serialNumber.length == 17 && serialNumber.length == 18) {
+                this.productData['SerialNumber'] = serialNumber;
+            } else {
+                alert('请输入正确的产品SN码');
+            }
             var self = this;
             var url = Amour.APIHost + '/BoseWechat.Service/Api/MemberCenter/PointsAdding';
             $.post(url, {
