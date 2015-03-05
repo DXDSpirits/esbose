@@ -47,9 +47,9 @@
                     $btn.find('span').text(second);
                     _.delay(function() {
                         countdown(second-1);
-                    }, 1000)
+                    }, 1000);
                 }
-            }
+            };
             countdown(120);
         },
         sendCode: function(e) {
@@ -67,6 +67,7 @@
                 if (!data) return;
                 if (data.Code == 0) {
                     self.$('input[name=code]').val(data.Result);
+                    self.lockSending();
                 } else {
                     alert(data.Description);
                 }
@@ -172,10 +173,10 @@
         readImage: function(e, name) {
             console.log(e.target.files);
             var file = e.target.files[0];
-            if (file.size > 500 * 1024) {
+            /*if (file.size > 500 * 1024) {
                 alert('您上传的图片过大，请选择500K以内的图片重新上传');
                 return;
-            }
+            }*/
             reader = new FileReader();
             var self = this;
             reader.onloadend = function() {
@@ -198,25 +199,35 @@
                 return;
             };
             var serialNumber = this.$('input[name=serial]').val() || '';
-            if (serialNumber.length == 17 && serialNumber.length == 18) {
+            if (serialNumber.length == 17 || serialNumber.length == 18) {
                 this.productData['SerialNumber'] = serialNumber;
             } else {
                 alert('请输入正确的产品SN码');
             }
             var self = this;
             var url = Amour.APIHost + '/BoseWechat.Service/Api/MemberCenter/PointsAdding';
-            $.post(url, {
-                //'OpenID': openId,
-                'Ticket': token,
-                'Product': this.productData
-            }, function(data) {
-                console.log(data);
-                if (!data) return;
-                if (data.Code == 0) {
-                    alert('提交成功');
-                    self.$('input').val('');
-                } else {
-                    alert(data.Description);
+            $.ajax({
+                url: url,
+                timeout: 60 * 1000, // 60 seconds
+                data: {
+                    //'OpenID': openId,
+                    'Ticket': token,
+                    'Product': this.productData
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    if (textStatus == 'timeout') {
+                        alert('您上传的图片过大，请选择500K以内的图片重新上传');
+                    }
+                },
+                success: function(data) {
+                    console.log(data);
+                    if (!data) return;
+                    if (data.Code == 0) {
+                        alert('提交成功');
+                        self.$('input').val('');
+                    } else {
+                        alert(data.Description);
+                    }
                 }
             });
         }
